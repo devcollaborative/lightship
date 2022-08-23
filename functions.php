@@ -22,8 +22,6 @@ require get_template_directory() . '/inc/template-functions.php';
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 
-// Customizer additions.
-require get_template_directory() . '/inc/customizer.php';
-
 // Register & remove support for theme features.
 require get_template_directory() . '/inc/theme-setup.php';
+
