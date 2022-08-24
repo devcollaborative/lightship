@@ -1,10 +1,10 @@
 <?php
 /**
- * Register navigation menu locations for a theme.
+ * Register navigation menus.
  *
  * @see https://developer.wordpress.org/themes/functionality/navigation-menus/
  */
-function devcollab_nav_menus() {
+function wp_lightship_nav_menus() {
 	/**
 	 * Register theme menu locations.
 	 */
@@ -13,4 +13,4 @@ function devcollab_nav_menus() {
 		'footer-menu'  => 'Footer',
 	) );
 }
-add_action( 'after_setup_theme', 'devcollab_nav_menus' );
+add_action( 'after_setup_theme', 'wp_lightship_nav_menus' );

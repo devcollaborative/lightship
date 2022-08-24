@@ -1,13 +1,13 @@
 {
-  "name": "devcollab-starter",
+  "name": "wp-lightship",
   "version": "1.0.0",
-  "description": "DevCollab LightShip stater theme.",
+  "description": "WP LightShip",
   "author": "DevCollaborative",
   "license": "GPL-2.0-or-later",
   "homepage": "https://devcollaborative.com/",
   "repository": {
     "type": "git",
-    "url": "git+URL-HERE"
+    "url": "git+https://github.com/devcollaborative/wp-lightship"
   },
   "devDependencies": {
     "del": "^3.0.0",

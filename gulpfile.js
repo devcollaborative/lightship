@@ -1,6 +1,5 @@
-/**
- * @file
- * Lightship Theme Gulpfile for compiling Sass.
+/*
+ * Gulpfile for compiling Sass.
  */
 
 // https://css-tricks.com/gulp-for-beginners/

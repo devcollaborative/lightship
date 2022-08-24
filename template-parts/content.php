@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package DevCollab_Starter
+ * @package WP_LightShip
  */
 
 ?>
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				devcollab_starter_posted_on();
-				devcollab_starter_posted_by();
+				wp_lightship_posted_on();
+				wp_lightship_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php devcollab_starter_post_thumbnail(); ?>
+	<?php wp_lightship_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'devcollab-starter' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-lightship' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'devcollab-starter' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-lightship' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +58,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php devcollab_starter_entry_footer(); ?>
+		<?php wp_lightship_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

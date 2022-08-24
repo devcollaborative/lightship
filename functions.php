@@ -1,10 +1,10 @@
 <?php
 /**
- * DevCollab Starter functions and definitions
+ * Load theme functions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package DevCollab_Starter
+ * @package WP_LightShip
  */
 
 // Enqueue stylesheets and scripts.

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Button Group
- * Slug: devcollab/button-group
+ * Slug: wp-lightship/button-group
  * Description: A primary and secondary button side-by-side
  * Viewport Width: 500
  * Categories: headers

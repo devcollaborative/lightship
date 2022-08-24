@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package DevCollab_Starter
+ * @package WP_LightShip
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

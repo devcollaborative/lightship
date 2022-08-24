@@ -4,12 +4,12 @@
  *
  * filemtime() is used for cache busting when scripts/styles are updated.
  */
-function devcollab_assets() {
+function wp_lightship_assets() {
 	/**
 	 * Styles
 	 */
 	wp_enqueue_style(
-		'devcollab-style',
+		'wp-lightship/style',
 		get_template_directory_uri() . '/assets/css/style.css',
 		array(),
 		filemtime( get_template_directory_uri() . '/assets/css/style.css' )
@@ -19,13 +19,13 @@ function devcollab_assets() {
 	 * Version string must be set to null to load multiple font families.
 	 * @see https://core.trac.wordpress.org/ticket/49742
 	 */
-	wp_enqueue_style( 'devcollab-fonts','https://fonts.googleapis.com/css2?family=Fredoka+One&&family=Work+Sans:wght@300&display=swap', array(), null );
+	wp_enqueue_style( 'wp-lightship/fonts','https://fonts.googleapis.com/css2?family=Fredoka+One&&family=Work+Sans:wght@300&display=swap', array(), null );
 
 	/**
 	 * Scripts
 	 */
 	wp_enqueue_script(
-		'devcollab-navigation',
+		'wp-lightship/navigation',
 		get_template_directory_uri() . '/assets/js/navigation.js',
 		array(),
 		filemtime( get_template_directory_uri() . '/assets/js/navigation.js' ),
@@ -36,13 +36,13 @@ function devcollab_assets() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'devcollab_assets' );
+add_action( 'wp_enqueue_scripts', 'wp_lightship_assets' );
 
 /**
  * Add Google Fonts preconnect tags. Remove as needed.
  */
-function devcollab_font_extras() {
+function wp_lightship_font_extras() {
 	echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
 	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
 }
-add_action( 'wp_head', 'devcollab_font_extras', 7 );
+add_action( 'wp_head', 'wp_lightship_font_extras', 7 );

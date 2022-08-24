@@ -2,7 +2,7 @@
 /**
  * Register testimonial block.
  */
-function devcollab_init_testimonial() {
+function wp_lightship_init_testimonial() {
     if ( function_exists( 'acf_register_block_type' ) ) {
         acf_register_block_type( array(
             'name'              => 'testimonial',
@@ -15,4 +15,4 @@ function devcollab_init_testimonial() {
         ));
     }
 }
-add_action('acf/init', 'devcollab_init_testimonial');
+add_action('acf/init', 'wp_lightship_init_testimonial');

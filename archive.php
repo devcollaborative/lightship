@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package DevCollab_Starter
+ * @package WP_LightShip
  */
 
 get_header();
