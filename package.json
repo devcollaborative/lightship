@@ -1,13 +1,13 @@
 {
-  "name": "wp-lightship",
+  "name": "lightship",
   "version": "1.0.0",
-  "description": "WP LightShip",
+  "description": "LightShip",
   "author": "DevCollaborative",
   "license": "GPL-2.0-or-later",
   "homepage": "https://devcollaborative.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devcollaborative/wp-lightship"
+    "url": "git+https://github.com/devcollaborative/lightship"
   },
   "devDependencies": {
     "del": "^3.0.0",

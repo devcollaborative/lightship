@@ -6,23 +6,23 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WP_LightShip
+ * @package LightShip
  */
 
 ?>
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp-lightship' ) ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'lightship' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'wp-lightship' ), 'WordPress' );
+				printf( esc_html__( 'Proudly powered by %s', 'lightship' ), 'WordPress' );
 				?>
 			</a>
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'wp-lightship' ), 'wp-lightship', '<a href="https://devcollaborative.com/">DevCollaborative</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'lightship' ), 'lightship', '<a href="https://devcollaborative.com/">DevCollaborative</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

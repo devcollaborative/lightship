@@ -1,4 +1,4 @@
-WP LightShip
+LightShip
 ===
 
 Here are some of the other more interesting things you'll find here:
@@ -27,8 +27,8 @@ Installation
 
 Clone or download this repository, change its name to something else and then you'll need to do a find and replace on the name in all the theme files.
 
-1. Search for `wp_lightship_` to capture all function names and replace with: `[theme-name]_`
-1. Search for `wp-lightship` to capture all other instances and replace with: `[theme-name]`
+1. Search for `lightship_` to capture all function names and replace with: `[theme-name]_`
+1. Search for `lightship` to capture all other instances and replace with: `[theme-name]`
 1. Update the theme metadata in `style.css` and `pacakge.json`
 1. Replace fonts in `inc/assets.php` and `inc/block-editor.php`
 

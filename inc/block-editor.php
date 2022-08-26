@@ -2,17 +2,17 @@
 /**
  * Block editor setup.
  *
- * @package WP_LightShip
+ * @package LightShip
  */
 
  /**
  * Enqueue Block Editor assets.
  */
-function wp_lightship_block_styles() {
+function lightship_block_styles() {
 	add_editor_style(get_template_directory_uri() . '/assets/css/block-editor.css');
 
 	wp_enqueue_script(
-		'wp-lightship/block-editor-js',
+		'lightship/block-editor-js',
 		get_template_directory_uri() . '/assets/js/block-editor.js',
 		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
 		filemtime( get_template_directory_uri() . '/assets/js/block-editor.js' ),
@@ -23,14 +23,14 @@ function wp_lightship_block_styles() {
    * Version param must be set to null to load multiple font families.
    * @see https://core.trac.wordpress.org/ticket/49742
    */
-  wp_enqueue_style( 'wp-lightship/fonts','https://fonts.googleapis.com/css2?family=Fredoka+One&family=Work+Sans:wght@300&display=swap', array(), null );
+  wp_enqueue_style( 'lightship/fonts','https://fonts.googleapis.com/css2?family=Fredoka+One&family=Work+Sans:wght@300&display=swap', array(), null );
 }
-add_action( 'enqueue_block_editor_assets', 'wp_lightship_block_styles' );
+add_action( 'enqueue_block_editor_assets', 'lightship_block_styles' );
 
 /**
  * Define block editor support & features.
  */
-function wp_lightship_block_editor_setup() {
+function lightship_block_editor_setup() {
 	// Enable editor styles compatibility.
 	add_theme_support( 'editor-styles' );
 
@@ -49,7 +49,7 @@ function wp_lightship_block_editor_setup() {
 	// Disable pattern directory.
 	add_filter( 'should_load_remote_block_patterns', '__return_false' );
 }
-add_action( 'after_setup_theme', 'wp_lightship_block_editor_setup' );
+add_action( 'after_setup_theme', 'lightship_block_editor_setup' );
 
 /**
  * Only allow specified blocks in the editor.
@@ -57,7 +57,7 @@ add_action( 'after_setup_theme', 'wp_lightship_block_editor_setup' );
  * - Any patterns using disabled blocks will be removed from the editor
  * - Embed variations are disabled in assets/js/block-editor.js
  */
-function wp_lightship_allowed_block_types() {
+function lightship_allowed_block_types() {
 	return array(
 		'core/buttons',
 		'core/button',
@@ -77,4 +77,4 @@ function wp_lightship_allowed_block_types() {
 		'core/video',
 	);
 }
-add_filter( 'allowed_block_types_all', 'wp_lightship_allowed_block_types' );
+add_filter( 'allowed_block_types_all', 'lightship_allowed_block_types' );
