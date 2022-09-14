@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <article>
+    <h1>Search Results for "{{ search_query }}"</h1>
+
+    {{ fn('get_search_form') }}
+
+    {% for post in posts %}
+      {% include [ 'partials/teaser-' ~ post.post_type ~ '.twig', 'partials/teaser.twig' ] %}
+    {% else %}
+      <p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>
+    {% endfor %}
+
+    {% include 'partials/pagination.twig' %}
+  </article>
+{% endblock %}

@@ -1,4 +1,7 @@
 <?php
+
+use Timber;
+
 /**
  * Register navigation menus.
  *
@@ -14,3 +17,17 @@ function lightship_nav_menus() {
 	) );
 }
 add_action( 'after_setup_theme', 'lightship_nav_menus' );
+
+
+/**
+ * Add menus to Timber context, so they're accessible in templates.
+ *
+ * @param array $context Timber context
+ */
+function lightship_add_menus_to_context( $context ) {
+	$context['primary_menu'] = new Timber\Menu('primary-menu');
+	$context['footer_menu']  = new Timber\Menu('footer-menu');
+
+	return $context;
+}
+add_filter( 'timber/context', 'lightship_add_menus_to_context' );

@@ -1,0 +1,23 @@
+{% if pagination is not empty %}
+  <nav class="navigation pagination" aria-label="Posts">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+
+		<div class="nav-links">
+      {% if pagination.prev %}
+        <a class="previous page-numbers" href="{{ pagination.prev.link }}">Previous</a>
+      {% endif %}
+
+      {% for page in pagination.pages %}
+        {% if page.link %}
+          <a class="page-numbers" href="{{ page.link }}">{{ page.title }}</a>
+        {% else %}
+          <span aria-current="page" class="page-numbers current">{{ page.title }}</span>
+        {% endif %}
+      {% endfor %}
+
+      {% if pagination.next %}
+        <a class="next page-numbers" href="{{ pagination.next.link }}">Next</a>
+      {% endif %}
+    </div>
+	</nav>
+{% endif %}

@@ -1,0 +1,9 @@
+{% if image %}
+    <figure class="wp-block-image {{ classes }}">
+        <img src="{{ image|resize(width ? width : 600, height ? height : 300) }}" srcset="{{ image.srcset }}" alt="{{ image.alt }}">
+
+        {% if image.caption %}
+            <figcaption>{{ image.caption }}</figcaption>
+        {% endif %}
+    </figure>
+{% endif %}

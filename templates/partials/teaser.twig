@@ -1,0 +1,5 @@
+<div class="teaser">
+  <h3><a href="{{ post.link }}">{{ post.title }}</a></h3>
+  <img src="{{ post.thumbnail|resize(400, 300) }}" alt="{{ post.thumbnail.alt }}">
+  <p>{{ post.preview.length(50).read_more(false) }}</p>
+</div>

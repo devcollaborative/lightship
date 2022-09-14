@@ -1,0 +1,14 @@
+<div class="testimonial {{ classes }} {{ align }}" {% if anchor %}id="{{ anchor }}"{% endif %}>
+    <blockquote class="testimonial-blockquote">
+        <p class="testimonial-text">{{ text }}</p>
+
+        <cite>
+          <span class="testimonial-author">{{ author }}</span>
+          <span class="testimonial-role">{{ role }}</span>
+        </cite>
+
+        <div class="testimonial-image">
+          <img src="{{ image|resize(100, 100) }}" alt="{{ image.alt }}" loading="lazy">
+        </div>
+    </blockquote>
+</div>

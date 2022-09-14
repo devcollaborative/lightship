@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% for post in posts %}
+		{% include ['partials/teaser-' ~ post.post_type ~ '.twig', 'partials/teaser.twig'] %}
+	{% else %}
+		<p>No posts found.</p>
+	{% endfor %}
+
+	{% include 'partials/pagination.twig' %}
+{% endblock %}

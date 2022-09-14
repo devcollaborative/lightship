@@ -1,34 +1,23 @@
 <?php
 /**
- * The template for displaying the footer
+ * Third party plugins that hijack the theme will call wp_footer() to get the footer template.
  *
- * Contains the closing of the #content div and all content after.
+ * We use this to end our output buffer (started in header.php) and render into the template/page-plugin.twig template.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package LightShip
+ * If you're not using a plugin that requires this behavior (ones that do include Events Calendar Pro and
+ * WooCommerce) you can delete this file and header.php
  */
 
-?>
+$timberContext = $GLOBALS['timberContext'];
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'lightship' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'lightship' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'lightship' ), 'lightship', '<a href="https://devcollaborative.com/">DevCollaborative</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+if ( ! isset( $timberContext ) ) {
+	throw new \Exception( 'Timber context not set in footer.' );
+}
 
-<?php wp_footer(); ?>
+$timberContext['content'] = ob_get_contents();
 
-</body>
-</html>
+ob_end_clean();
+
+$templates = array( 'page-plugin.twig' );
+
+Timber\Timber::render( $templates, $timberContext );

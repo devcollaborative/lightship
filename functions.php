@@ -1,11 +1,19 @@
 <?php
+
 /**
  * Load theme functions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WP_LightShip
+ * @package LightShip
  */
+
+/**
+ * Load functionality.
+ */
+
+// Timber functionality.
+require get_template_directory() . '/inc/timber.php';
 
 // Enqueue stylesheets and scripts.
 require get_template_directory() . '/inc/assets.php';

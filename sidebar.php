@@ -1,17 +1,19 @@
 <?php
+
 /**
  * The sidebar containing the main widget area
  *
+ * @link https://timber.github.io/docs/guides/sidebars/#method-1-php-file
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package LightShip
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?>
+use Timber\Timber;
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+$context = [];
+
+$context['title']   = 'My sidebar';
+$context['widgets'] = Timber::get_widgets('sidebar-1');
+
+Timber::render( 'partials/sidebar.twig', $context );
