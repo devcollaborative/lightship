@@ -52,3 +52,7 @@ gulp.task('build-unminified', (cb) => {
 	runSequence('build');
 	cb();
 });
+
+gulp.task('default', (cb) => {
+	runSequence('watch');
+});
