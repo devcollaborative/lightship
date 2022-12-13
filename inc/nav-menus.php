@@ -7,7 +7,7 @@ use Timber;
  *
  * @see https://developer.wordpress.org/themes/functionality/navigation-menus/
  */
-function lightship_nav_menus() {
+function devcollab_nav_menus() {
 	/**
 	 * Register theme menu locations.
 	 */
@@ -16,7 +16,7 @@ function lightship_nav_menus() {
 		'footer-menu'  => 'Footer',
 	) );
 }
-add_action( 'after_setup_theme', 'lightship_nav_menus' );
+add_action( 'after_setup_theme', 'devcollab_nav_menus' );
 
 
 /**
@@ -24,10 +24,10 @@ add_action( 'after_setup_theme', 'lightship_nav_menus' );
  *
  * @param array $context Timber context
  */
-function lightship_add_menus_to_context( $context ) {
+function devcollab_add_menus_to_context( $context ) {
 	$context['primary_menu'] = new Timber\Menu('primary-menu');
 	$context['footer_menu']  = new Timber\Menu('footer-menu');
 
 	return $context;
 }
-add_filter( 'timber/context', 'lightship_add_menus_to_context' );
+add_filter( 'timber/context', 'devcollab_add_menus_to_context' );

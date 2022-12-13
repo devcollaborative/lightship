@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function lightship_widgets_init() {
+function devcollab_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Sidebar',
 		'id'            => 'sidebar-1',
@@ -15,4 +15,4 @@ function lightship_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'lightship_widgets_init' );
+add_action( 'widgets_init', 'devcollab_widgets_init' );

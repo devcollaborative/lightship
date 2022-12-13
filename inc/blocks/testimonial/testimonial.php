@@ -3,7 +3,7 @@
 /**
  * Register testimonial block.
  */
-function lightship_init_testimonial() {
+function devcollab_init_testimonial() {
     if ( ! function_exists( 'acf_register_block_type' ) ) {
         return;
     }
@@ -12,14 +12,14 @@ function lightship_init_testimonial() {
         'name'              => 'testimonial',
         'title'             => 'Testimonial',
         'description'       => 'A custom testimonial block.',
-        'render_callback'   => 'lightship_render_testimonial',
+        'render_callback'   => 'devcollab_render_testimonial',
         'category'          => 'formatting',
         'icon'              => 'admin-comments',
         'keywords'          => array( 'testimonial', 'quote' ),
         'supports'          => array( 'anchor' => true ),
     ));
 }
-add_action('acf/init', 'lightship_init_testimonial');
+add_action('acf/init', 'devcollab_init_testimonial');
 
 /**
  *  Render the block.
@@ -28,7 +28,7 @@ add_action('acf/init', 'lightship_init_testimonial');
  * @param   string $content    The block content (emtpy string).
  * @param   bool   $is_preview True during AJAX preview.
  */
-function lightship_render_testimonial($block, $content = '', $is_preview = false) {
+function devcollab_render_testimonial($block, $content = '', $is_preview = false) {
     $context = Timber::context();
 
     // Set anchor value if present.

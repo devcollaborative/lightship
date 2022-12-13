@@ -3,7 +3,7 @@ LightShip
 
 LightShip is a minimalist starter theme for WordPress founded on the tenets of simplicity, accessibility and infrastructure sustainability.
 
-It's still a work in progress, if you run into any issues or improvements please open an issue or pull-request.
+It's still a work in progress, if you run into any issues or improvements please open an issue or PR.
 
 Getting Started
 ---------------
@@ -18,13 +18,8 @@ Getting Started
 
 ### Installing
 
-Clone or download this repository and rename as needed.
-`git clone git@github.com:devcollaborative/lightship.git theme-name`
-
-Do a find and replace on the name in all the theme files:
-
-1. Search for `lightship_` to capture all function names and replace with: `[theme-name]_`
-1. Search for `lightship` to capture all other instances and replace with: `[theme-name]`
+Clone or download this repository and rename theme to orgnameYEAR.
+`git clone git@github.com:devcollaborative/lightship.git orgnameYEAR`
 
 Update theme settings:
 

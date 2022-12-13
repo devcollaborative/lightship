@@ -33,7 +33,7 @@ Timber::$dirname = array( 'templates', 'inc/blocks' );
  *
  * @param string $context context['my_var'] can be accessed in twig with: {{ this }}.
  */
-function lightship_add_to_context( $context ) {
+function devcollab_add_to_context( $context ) {
 	/**
 	 * Set up a new Timber Site.
 	 *
@@ -52,7 +52,7 @@ function lightship_add_to_context( $context ) {
 
 	return $context;
 }
-add_filter( 'timber/context', 'lightship_add_to_context' );
+add_filter( 'timber/context', 'devcollab_add_to_context' );
 
 
 /**
@@ -62,7 +62,7 @@ add_filter( 'timber/context', 'lightship_add_to_context' );
  *
  * @param object $twig get extension.
  */
-function lightship_add_to_twig( $twig ) {
+function devcollab_add_to_twig( $twig ) {
 	// Add a function.
 	$twig->addFunction( new Timber\Twig_Function( 'edit_post_link', 'edit_post_link' ) );
 
@@ -73,4 +73,4 @@ function lightship_add_to_twig( $twig ) {
 
 	return $twig;
 }
-// add_filter( 'timber/twig', 'lightship_add_to_twig' );
+// add_filter( 'timber/twig', 'devcollab_add_to_twig' );
