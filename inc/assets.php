@@ -12,7 +12,7 @@ function lightship_assets() {
 		'lightship/style',
 		get_template_directory_uri() . '/assets/css/style.css',
 		array(),
-		filemtime( get_template_directory_uri() . '/assets/css/style.css' )
+		filemtime( get_template_directory() . '/assets/css/style.css' )
 	);
 
 	/**
@@ -28,7 +28,7 @@ function lightship_assets() {
 		'lightship/navigation',
 		get_template_directory_uri() . '/assets/js/navigation.js',
 		array(),
-		filemtime( get_template_directory_uri() . '/assets/js/navigation.js' ),
+		filemtime( get_template_directory() . '/assets/js/navigation.js' ),
 		true
 	);
 

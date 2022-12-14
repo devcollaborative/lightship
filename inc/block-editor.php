@@ -15,7 +15,7 @@ function lightship_block_styles() {
 		'lightship/block-editor-js',
 		get_template_directory_uri() . '/assets/js/block-editor.js',
 		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
-		filemtime( get_template_directory_uri() . '/assets/js/block-editor.js' ),
+		filemtime( get_template_directory() . '/assets/js/block-editor.js' ),
 		false
 	);
 
