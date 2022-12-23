@@ -1,0 +1,51 @@
+.site {
+	display: grid;
+	grid-template:
+	    "header" auto
+		"main" 1fr
+		"footer" auto / 100%;
+	min-height: 100vh;
+}
+
+.site-header {
+	grid-area: header;
+}
+
+.site-main {
+	grid-area: main;
+	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+}
+
+.site-footer {
+	grid-area: footer;
+}
+
+// Alignment
+
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: var(--gutter-plus);
+	margin-bottom: var(--gutter-plus);
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: var(--gutter-plus);
+	margin-bottom: var(--gutter-plus);
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: var(--gutter-plus);
+}

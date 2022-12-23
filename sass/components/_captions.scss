@@ -1,0 +1,17 @@
+.wp-caption {
+	margin-bottom: var(--gutter-plus);
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.wp-caption-text {
+		margin: var(--gutter-minus) 0;
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}

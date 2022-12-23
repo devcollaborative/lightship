@@ -9,38 +9,40 @@
 </head>
 
 <body {{ body_class }}>
-	<a class="skip-link screen-reader-text" href="#mainContent">Skip to content</a>
+	<div class="site">
+		<a class="skip-link screen-reader-text" href="#mainContent">Skip to content</a>
 
-	{% block header %}
-		<header class="site-header">
-			<div class="site-branding">
-				<a href="{{ site.link }}" rel="home">{{ site.name }}</a>
-			</div>
+		{% block header %}
+			<header class="site-header">
+				<div class="site-branding">
+					<a href="{{ site.link }}" rel="home">{{ site.name }}</a>
+				</div>
 
-			<nav id="site-navigation" class="main-navigation" aria-label="Main navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+				<nav id="site-navigation" class="main-navigation" aria-label="Main navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
 
-				{% include "partials/menu.twig" with { 'menu': primary_menu.get_items } %}
-			</nav>
-		</header>
-	{% endblock %}
-
-	<main id="mainContent" class="site-main">
-		{% block content %}
-			Sorry, no content.
+					{% include "partials/menu.twig" with { 'menu': primary_menu.get_items } %}
+				</nav>
+			</header>
 		{% endblock %}
 
-		{% if sidebar %}
-			<aside class="site-sidebar">
-				{{ sidebar }}
-			</aside>
-		{% endif %}
-	</main>
+		<main id="mainContent" class="site-main">
+			{% block content %}
+				Sorry, no content.
+			{% endblock %}
 
-	{% block footer %}
-		{% include 'partials/footer.twig' %}
-	{% endblock %}
+			{% if sidebar %}
+				<aside class="site-sidebar">
+					{{ sidebar }}
+				</aside>
+			{% endif %}
+		</main>
 
-	{{ function('wp_footer') }}
+		{% block footer %}
+			{% include 'partials/footer.twig' %}
+		{% endblock %}
+
+		{{ function('wp_footer') }}
+	</div>
 </body>
 </html>
