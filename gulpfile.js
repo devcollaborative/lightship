@@ -38,7 +38,7 @@ gulp.task('clean:css', (cb) => {
 });
 
 gulp.task('watch', () => {
-	gulp.watch('sass/**/*.scss', gulp.series('sass'));
+	gulp.watch(['sass/**/*.scss', 'inc/blocks/*/*.scss'], gulp.series('sass'));
 });
 
 // One time build process.
