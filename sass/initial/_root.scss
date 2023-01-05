@@ -1,0 +1,8 @@
+@use "../config" as *;
+
+html {
+  @include tokens($color);
+  @include tokens($size);
+  @include tokens($type);
+}
+

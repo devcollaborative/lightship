@@ -1,0 +1,26 @@
+ul,
+ol {
+	margin: 0 0 var(--gutter-plus) var(--gutter);
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: var(--gutter-plus);
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 var(--gutter-plus) var(--gutter);
+}

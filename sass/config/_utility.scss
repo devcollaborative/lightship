@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "sass:meta";
+@use "color";
+@use "size";
+@use "type";
+
+/// Returns all the variables defined in a module, as a map from variable names (without $) to the values of those variables.
+// The $module parameter must be a string matching the namespace of a
+// @use rule in the current file.
+/// @link https://sass-lang.com/documentation/modules/meta#module-variables
+$color: meta.module-variables("color");
+$size: meta.module-variables("size");
+$type: meta.module-variables("type");
+
+// Loops through and returns all tokens from above files as CSS variables.
+// @include this on the html element (in initial/_root.scss)
+@mixin tokens($map, $prefix: null) {
+  @each $tokenname, $tokenvalue in $map {
+    --#{$prefix}#{$tokenname}: #{$tokenvalue};
+  }
+}

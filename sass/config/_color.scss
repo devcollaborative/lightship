@@ -1,0 +1,61 @@
+@use "sass:color";
+
+// Brand Colors
+$brand-dark: #193e85;
+$brand-bright: #ed5a46;
+
+/// UI Patterns
+//  -----------
+/// You can refer to colors in other variables to adjust
+/// This will keep the relationship between colors,
+/// without referencing colors by name as colors can change
+/// @link https://sass-lang.com/documentation/modules/color#adjust
+/// @link https://sass-lang.com/documentation/modules/color#scale
+
+// Backgrounds
+// -----------
+$bg: #fff;
+$bg-offset:  color.scale($bg, $lightness: -3%);
+$bg-dark: $brand-dark;
+$bg-dark-lightened: color.scale($bg-dark, $lightness: 80%);
+$bg-bright: $brand-bright;
+$bg-bright-lightened: color.scale($bg-bright, $lightness: 80%);
+$hr: #ccc;
+
+// Foreground/Type
+// ---------------
+$text: color.scale($brand-dark, $saturation: -35%);
+
+// Links
+// -----
+$link: $brand-dark;
+$link-visited: color.scale($brand-dark, $lightness: 15%);
+$link-hover: color.scale($brand-dark, $lightness: 30%);
+
+// Buttons
+// -------
+$btn-text: $bg;
+$btn-text-hover: $btn-text;
+$btn-bg: $bg-bright;
+$btn-bg-hover: color.scale($btn-bg, $lightness: -15%);
+$btn-border: $btn-bg;
+$btn-border-hover: $btn-bg-hover;
+$btn-border-focus: color.scale($btn-bg, $lightness: -25%);
+
+// Forms
+// -----
+$input-border: #ccc;
+$input-border-focus: $bg-dark;
+$input-text: $text;
+$input-text-focus: $text;
+
+// Accessibility Helpers
+// ---------------------
+$sr-text: #fff;
+$sr-bg: hsl(230, 30%, 13%);
+
+// Lesser Used Elements, can remove if not in use
+// ----------------------------------------------
+$ins: #fff9c0;
+$pre-bg: #eee;
+$abbr-border: #666;

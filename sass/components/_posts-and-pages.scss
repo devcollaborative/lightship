@@ -1,0 +1,23 @@
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 var(--gutter-plus);
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: var(--gutter-plus) 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 var(--gutter-plus);
+}

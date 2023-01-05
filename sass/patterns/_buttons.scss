@@ -1,0 +1,24 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: var(--border-small) solid var(--btn-border-state, var(--btn-border));
+	border-radius: var(--btn-radius);
+	background: var(--btn-bg-state, var(--btn-bg));
+	color: var(--btn-text-state, var(--btn-text));
+	line-height: 1;
+	padding: var(--half-gutter) var(--gutter);
+
+	&:hover {
+		--btn-bg-state: var(--btn-bg-hover);
+		--btn-border-state: var(--btn-border-hover);
+		--btn-text-state: var(--btn-text-hover);
+	}
+
+	&:active,
+	&:focus {
+		--btn-bg-state: var(--btn-bg-focus);
+		--btn-border-state: var(--btn-border-focus);
+		--btn-text-state: var(--btn-text-focus);
+	}
+}

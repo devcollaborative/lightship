@@ -1,0 +1,70 @@
+@use "sass:math";
+
+html {
+	color: var(--text);
+	font-family: var(--font-body);
+	font-size: calc(1.1em + .25vw);
+	line-height: var(--line-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: var(--font-heading);
+}
+
+p {
+	margin-bottom: var(--gutter-plus);
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 var(--gutter-plus);
+}
+
+address {
+	margin: 0 0 var(--gutter-plus);
+}
+
+pre {
+	background: var(--bg-pre);
+	font-family: var(--font-pre);
+	line-height: var(--line-height-pre);
+	margin-bottom: var(--gutter-plus);
+	max-width: 100%;
+	overflow: auto;
+	padding: var(--gutter-plus);
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: var(--font-code);
+}
+
+abbr,
+acronym {
+	border-bottom: var(--border-small) dotted var(--abbr-border, --border);
+	cursor: help;
+}
+
+mark,
+ins {
+	background: var(--ins);
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
