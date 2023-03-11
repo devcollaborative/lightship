@@ -1,0 +1,129 @@
+$main-nav-breakpoint: 768px;
+
+// Remove margin & passing for all lists in menu
+#site-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+// Top level menu
+#site-navigation > ul {
+  display: none;
+
+  @media (min-width: $main-nav-breakpoint) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // Top level menu items
+  > li {
+    @media (min-width: $main-nav-breakpoint) {
+      margin: 0 .75rem;
+    }
+
+    // Top level menu links
+    > a {
+      display: block;
+      padding: 1rem;
+      text-decoration: none;
+    }
+
+    // Top level menu link hover/active style
+    &:hover > a,
+    &:focus-within > a {
+      color: blue;
+    }
+  }
+
+  // Top level menu items with submenus
+  > li.menu-item-has-children {
+    position: relative;
+
+    // Top level menu links with submenu
+    > a {
+      padding-right: 2rem; // compensate for open/close button
+    }
+  }
+}
+
+// Display top level menu when toggled
+#site-navigation.is-active ul {
+  display: block;
+}
+
+// Submenus
+#site-navigation ul ul {
+  @media (min-width: $main-nav-breakpoint) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: block;
+    padding: 0;
+    margin: 0;
+    min-width: 250px;
+    background-color: white;
+    list-style-type: none;
+    z-index: 1; // display above page content
+  }
+
+  // Submenu links
+  a {
+    display: block;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Submenu toggle buttons
+#site-navigation .submenu-toggle {
+  position: absolute;
+  display: inline-block;
+  height: 50px;
+  width: 75px;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 1rem;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'> fill='%23000000'><path d='M12 16l8.9-8.9c-.8-.8-2-.8-2.8 0L12 13.2l-6.1-6c-.8-.8-2-.8-2.8 0L12 16z'/></svg>");
+  background-size: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  @media (min-width: $main-nav-breakpoint) {
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    background-size: 15px;
+  }
+}
+
+// Display submenus on hover
+#site-navigation .menu-item-has-children:hover ul {
+  @media (min-width: $main-nav-breakpoint) and (hover: hover) {
+    display: block !important;
+  }
+}
+
+/**
+ * Mobile menu toggle
+ */
+#menu-toggle {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: center;
+
+  @media (min-width: $main-nav-breakpoint) {
+    display: none;
+  }
+}

@@ -26,9 +26,17 @@ function lightship_assets() {
 	 */
 	wp_enqueue_script(
 		'lightship/navigation',
-		get_template_directory_uri() . '/assets/js/navigation.js',
+		get_template_directory_uri() . '/assets/js/accessible-menu.js',
 		array(),
-		filemtime( get_template_directory() . '/assets/js/navigation.js' ),
+		filemtime( get_template_directory() . '/assets/js/accessible-menu.js' ),
+		true
+	);
+
+	wp_enqueue_script(
+		'lightship/theme',
+		get_template_directory_uri() . '/assets/js/theme.js',
+		array(),
+		filemtime( get_template_directory() . '/assets/js/theme.js' ),
 		true
 	);
 
