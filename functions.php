@@ -8,9 +8,9 @@
  * @package LightShip
  */
 
-/**
- * Load functionality.
- */
+// Load Composer dependencies.
+require_once __DIR__ . '/vendor/autoload.php';
+Timber\Timber::init();
 
 // Timber functionality.
 require get_template_directory() . '/inc/timber.php';
