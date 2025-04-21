@@ -1,13 +1,13 @@
-{% if pagination is not empty %}
+{% if posts.pagination is not empty %}
   <nav class="navigation pagination" aria-label="Posts">
 		<h2 class="screen-reader-text">Posts navigation</h2>
 
 		<div class="nav-links">
-      {% if pagination.prev %}
-        <a class="previous page-numbers" href="{{ pagination.prev.link }}">Previous</a>
+      {% if posts.pagination.prev %}
+        <a class="previous page-numbers" href="{{ posts.pagination.prev.link }}">Previous</a>
       {% endif %}
 
-      {% for page in pagination.pages %}
+      {% for page in posts.pagination.pages %}
         {% if page.link %}
           <a class="page-numbers" href="{{ page.link }}">{{ page.title }}</a>
         {% else %}
@@ -15,8 +15,8 @@
         {% endif %}
       {% endfor %}
 
-      {% if pagination.next %}
-        <a class="next page-numbers" href="{{ pagination.next.link }}">Next</a>
+      {% if posts.pagination.next %}
+        <a class="next page-numbers" href="{{ posts.pagination.next.link }}">Next</a>
       {% endif %}
     </div>
 	</nav>

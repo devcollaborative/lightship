@@ -1,6 +1,6 @@
 <?php
 
-use Timber;
+use Timber\Timber;
 
 /**
  * Register navigation menus.
@@ -25,8 +25,8 @@ add_action( 'after_setup_theme', 'lightship_nav_menus' );
  * @param array $context Timber context
  */
 function lightship_add_menus_to_context( $context ) {
-	$context['primary_menu'] = new Timber\Menu('primary-menu');
-	$context['footer_menu']  = new Timber\Menu('footer-menu');
+	$context['primary_menu'] = Timber::get_menu('primary-menu');
+	$context['footer_menu']  = Timber::get_menu('footer-menu');
 
 	return $context;
 }

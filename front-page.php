@@ -6,7 +6,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
-use Timber\Tibmber;
+use Timber\Timber;
 
 $context         = Timber::context();
 $context['post'] = Timber::get_post();
