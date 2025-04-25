@@ -1,0 +1,5 @@
+@forward "../../sprite/sprite"; // load icon dimensions
+
+.icon {
+  pointer-events: none; // prevents SVGs from blocking JS click events
+}

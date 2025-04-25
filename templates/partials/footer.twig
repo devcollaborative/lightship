@@ -6,6 +6,7 @@
 
     <div class="site-info">
       &copy; {{ 'now'|date('Y') }} {{ site.name }}
+      {% include "partials/menu-social-media.twig" with { 'menu': social_media_menu.get_items } %}
     </div>
   </div>
 </footer>

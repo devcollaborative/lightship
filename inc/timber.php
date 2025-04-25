@@ -54,23 +54,37 @@ function lightship_add_to_context( $context ) {
 }
 add_filter( 'timber/context', 'lightship_add_to_context' );
 
+/**
+ * Add custom functions to Twig.
+ *
+ * @link https://timber.github.io/docs/v2/guides/extending-twig/
+ */
+add_filter('timber/twig/functions', function ($functions) {
+	$functions['edit_post_link'] = [
+			'callable' => 'edit_post_link',
+	];
+
+	$functions['icon'] = [
+		'callable' => function($name, $classes = '') {
+			return Timber\Timber::render('partials/icon.twig', [
+				'icon' => $name,
+				'classes' => $classes,
+			]);
+		},
+	];
+
+	return $functions;
+});
 
 /**
- * This is where you can add your own functions or filters to twig.
+ * Add custom filters to Twig.
  *
- * @link https://timber.github.io/docs/guides/extending-timber/#adding-functionality-to-twig
- *
- * @param object $twig get extension.
+ * @link https://timber.github.io/docs/v2/guides/extending-twig/
  */
-function lightship_add_to_twig( $twig ) {
-	// Add a function.
-	$twig->addFunction( new Timber\Twig_Function( 'edit_post_link', 'edit_post_link' ) );
+add_filter('timber/twig/filters', function ($filters) {
+	$filters['slugify'] = [
+			'callable' => 'sanitize_title',
+	];
 
-	// Add functions as filters.
-	$twig->addFilter(new Timber\Twig_Filter( 'slugify', function ( $title ) {
-		return sanitize_title($title);
-	}));
-
-	return $twig;
-}
-// add_filter( 'timber/twig', 'lightship_add_to_twig' );
+	return $filters;
+});

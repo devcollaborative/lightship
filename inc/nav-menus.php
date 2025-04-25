@@ -14,6 +14,7 @@ function lightship_nav_menus() {
 	register_nav_menus( array(
 		'primary-menu' => 'Primary',
 		'footer-menu'  => 'Footer',
+		'social-media-menu'  => 'Social Media',
 	) );
 }
 add_action( 'after_setup_theme', 'lightship_nav_menus' );
@@ -27,6 +28,7 @@ add_action( 'after_setup_theme', 'lightship_nav_menus' );
 function lightship_add_menus_to_context( $context ) {
 	$context['primary_menu'] = Timber::get_menu('primary-menu');
 	$context['footer_menu']  = Timber::get_menu('footer-menu');
+	$context['social_media_menu']  = Timber::get_menu('social-media-menu');
 
 	return $context;
 }

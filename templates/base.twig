@@ -44,6 +44,8 @@
 		{% include 'partials/footer.twig' %}
 	{% endblock %}
 
+	{{ fn('file_get_contents', fn('get_stylesheet_directory') ~ '/sprite/sprite.svg') }}
+
 	{{ function('wp_footer') }}
 </body>
 </html>

@@ -76,11 +76,13 @@ strong.geomanist {
 svg {
   height: auto;
   display: block;
-  pointer-events: none;
 }
 
 .menu {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
   list-style: none;
 }
