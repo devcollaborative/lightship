@@ -13,15 +13,18 @@
 
 	{% block header %}
 		<header class="site-header">
-			<div class="site-branding">
-				<a href="{{ site.link }}" rel="home">{{ site.name }}</a>
+			<div class="site-header__inner">
+				<div class="site-branding">
+					<a href="{{ site.link }}" rel="home">{{ site.name }}</a>
+				</div>
+
+				<nav id="site-navigation" class="main-navigation" aria-label="Main navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+
+					{% include "partials/menu.twig" with { 'menu': primary_menu.get_items } %}
+				</nav>
 			</div>
 
-			<nav id="site-navigation" class="main-navigation" aria-label="Main navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
-
-				{% include "partials/menu.twig" with { 'menu': primary_menu.get_items } %}
-			</nav>
 		</header>
 	{% endblock %}
 

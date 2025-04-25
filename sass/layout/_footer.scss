@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.site-footer {
+  padding: $vertical-spacing $page-margin;
+  background-color: #eaeaea;
+  outline: $debug-purple;
+}
+
+.site-footer__inner {
+  max-width: var(--content-wide);
+  margin-left: auto;
+  margin-right: auto;
+}

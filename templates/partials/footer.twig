@@ -1,9 +1,11 @@
 <footer class="site-footer">
-  <nav class="site-footer-menu" aria-label="Footer navigation">
-    {% include "partials/menu.twig" with { 'menu': footer_menu.get_items } %}
-  </nav>
+  <div class="site-footer__inner">
+    <nav class="site-footer-menu" aria-label="Footer navigation">
+      {% include "partials/menu.twig" with { 'menu': footer_menu.get_items } %}
+    </nav>
 
-  <div class="site-info">
-    &copy; {{ 'now'|date('Y') }} {{ site.name }}
+    <div class="site-info">
+      &copy; {{ 'now'|date('Y') }} {{ site.name }}
+    </div>
   </div>
 </footer>

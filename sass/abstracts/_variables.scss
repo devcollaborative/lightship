@@ -1,0 +1,100 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+@use "sass:math";
+
+// -----------------------------------------------------------------------------
+// Size functions
+// -----------------------------------------------------------------------------
+// Px to Em mixin
+// Ems for breakpoints, using browser context font size
+@function bp-em($pixels, $context: 16) {
+  @return #{math.div($pixels, $context)}em;
+}
+
+// Ems in relation to base font size
+@function em($pixels, $context: $base-font-size) {
+  @return #{math.div($pixels, $context)}em;
+}
+
+// Rem conversion
+// Convert pixel values to rem.
+@function rem-calc($pixels, $context: $base-font-size) {
+  @return math.div($pixels, $context) * 1rem;
+}
+
+// -----------------------------------------------------------------------------
+// Mobile-First Breakpoints - use bp-em to convert pixels to ems
+// -----------------------------------------------------------------------------
+$mobile: bp-em(679);
+$tablet: bp-em(680);
+$tablet-plus: bp-em(960);
+$desktop: bp-em(1100);
+$desktop-plus: bp-em(1440);
+$print: "print";
+
+// -----------------------------------------------------------------------------
+// Colors
+// -----------------------------------------------------------------------------
+$white: #fff;
+$black: #000;
+
+
+// -----------------------------------------------------------------------------
+// Font Stacks and Sizes
+// @font-face definitions should be defined in base/_fonts.scss
+// -----------------------------------------------------------------------------
+$georgia: Georgia, "Times New Roman", serif;
+$verdana: Verdana, Tahoma, sans-serif;
+
+$base-font-size: 20; // Pixel value only, no px unit
+$base-line-height: 1.4;
+
+
+// -----------------------------------------------------------------------------
+// Units
+// ** When you can...
+// ** Use REMs for sizes and spacing.
+// ** Use EMs for media queries.
+// -----------------------------------------------------------------------------
+
+// Widths
+$page-width: rem-calc(900);
+$page-width-wide: rem-calc(1100);
+$page-width-extra-wide: rem-calc(1300);
+
+:root {
+  --page-width: #{$page-width};
+  --page-width-wide: #{$page-width-wide};
+  --page-width-extra-wide: #{$page-width-extra-wide};
+}
+
+// Margins / Gutters
+$page-margin: rem-calc(20);
+$page-margin: rem-calc(20);
+
+// Spacing values
+$spacing: rem-calc(16);
+$vertical-spacing: $spacing;
+
+// -----------------------------------------------------------------------------
+// Other
+// -----------------------------------------------------------------------------
+$transition: .3s ease;
+
+
+// -----------------------------------------------------------------------------
+// Debugging
+// -----------------------------------------------------------------------------
+$debug-blue: 1px dotted blue;
+$debug-green: 1px dotted green;
+$debug-red: 1px dotted red;
+$debug-orange: 1px dotted orange;
+$debug-purple: 1px dotted rebeccapurple;
+$debug-solidred: 2px solid tomato;
+$debug-solidpink: 2px solid hotpink;
+$debug-solidorange: 2px solid orange;
+$debug-solidyellow: 2px solid gold;
+$debug-solidgreen: 2px solid lightgreen;
+$debug-solidblue: 2px solid deepskyblue;
+$debug-solidpurple: 2px solid rebeccapurple;

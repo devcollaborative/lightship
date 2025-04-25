@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+.wp-block-file:not(.wp-element-button) {
+  font-size: inherit;
+}
+
+.wp-block-file__button {
+  @include button;
+}

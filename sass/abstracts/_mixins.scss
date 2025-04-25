@@ -1,0 +1,132 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+@use 'variables' as *;
+
+// -----------------------------------------------------------------------------
+// Accessibility Mixins
+// -----------------------------------------------------------------------------
+
+/// Makes an element visually hidden, but accessible.
+/// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+/// Turns off the visually-hidden effect.
+@mixin visually-hidden-off {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  width: auto;
+  height: auto;
+}
+
+/// Makes an element visually hidden by default, but visible when focused.
+@mixin focusable {
+  @include visually-hidden;
+
+  &:active,
+  &:focus {
+    @include visually-hidden-off;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Typography Mixins
+// -----------------------------------------------------------------------------
+@mixin h1 {
+
+}
+
+@mixin h2 {
+
+}
+
+@mixin h3 {
+
+}
+
+@mixin h4 {
+
+}
+
+@mixin small-heading {
+  margin-bottom: rem-calc(20);
+  font-family: $georgia;
+  font-size: clamp(rem-calc(18), 3vw, rem-calc(20));
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.71px;
+  color: $blue;
+  text-transform: uppercase;
+}
+
+// -----------------------------------------------------------------------------
+// Utility Mixins
+// -----------------------------------------------------------------------------
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+/// Centers a block level element, requires width
+@mixin center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/// Vertical align, all browsers http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// -----------------------------------------------------------------------------
+// Layout Mixins
+// -----------------------------------------------------------------------------
+@mixin alignwide {
+  max-width: var(--page-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin extra-wide {
+  max-width: var(--page-width-extra-wide);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// -----------------------------------------------------------------------------
+// Theme Mixins
+// -----------------------------------------------------------------------------
+@mixin button {
+  border: solid 1px var(--background, orange);
+  background-color: var(--background, orange);
+  color: var(--foreground, $black);
+  text-decoration: none;
+  transition: background-color $transition, color $transition, border $transition;
+  cursor: pointer;
+
+  &:hover, &:active, &:focus {
+    border-color: var(--background-active, transparent);
+    background-color: var(--background-active, transparent);
+    color: var(--foreground-active, $black);
+    text-decoration: none;
+  }
+}
+
+@mixin button-light {
+  --background-active: #{$white};
+  --foreground-active: #{$black};
+}

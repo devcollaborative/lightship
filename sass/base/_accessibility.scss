@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+// Visually hide text for screenreaders
+.screen-reader-text {
+  @include visually-hidden;
+}
+
+:root {
+  --outline-size: max(2px, 0.08em);
+  --outline-style: solid;
+  --outline-color: currentColor;
+}
+
+// Custom focus styles
+// Uses currentColor--it should already have enough contrast with bg
+:is(a, button, input, textarea, select, summary, .facetwp-radio, .facetwp-checkbox) {
+  &:focus {
+    border-color: var(--outline-color);
+    outline: var(--outline-size) var(--outline-style) var(--outline-color);
+    outline-offset: var(--outline-offset, var(--outline-size));
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+:is(button, input, textarea, select, .facetwp-radio, .facetwp-checkbox) {
+  --outline-offset: -2px;
+}
+
+// The skip-link link will be completely hidden until a user tabs to the link.
+.skip-link {
+  @include focusable;
+}
+
+// Removing focus from content so that skip-link fix does not always highlight main container when any content is clicked
+.main {
+  outline: none;
+}

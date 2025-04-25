@@ -1,20 +1,86 @@
-/* Typography
---------------------------------------------- */
-@import "typography/typography";
+// Base HTML Styles
 
-/* Elements
---------------------------------------------- */
-@import "elements/body";
-@import "elements/hr";
-@import "elements/lists";
-@import "elements/media";
-@import "elements/tables";
+@use "sass:math";
+@use "../abstracts" as *;
 
-/* Links
---------------------------------------------- */
-@import "elements/links";
+* {
+  box-sizing: border-box;
+}
 
-/* Forms
---------------------------------------------- */
-@import "elements/buttons";
-@import "elements/fields";
+body {
+  // Theme Variables
+  --page-width: #{$page-width};
+  --content-wide: #{$page-width-wide};
+  --header-margin: #{rem-calc(60)};
+  --footer-margin: #{rem-calc(60)};
+
+  // WP Overrides
+  --wp--style--block-gap: #{$vertical-spacing};
+}
+
+html {
+  font-size: 100%; // respect browser font size setting
+  line-height: $base-line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $georgia;
+  font-size: clamp(rem-calc(18), 3vw, rem-calc(20));
+}
+
+// 1. Inherit theme styles.
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; // 1
+  font-size: inherit; // 1
+  line-height: $base-line-height; // 1
+}
+
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+}
+
+img,
+picture,
+object,
+input {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+
+}
+
+strong.geomanist {
+  font-family: $georgia;
+  font-weight: 500;
+}
+
+svg {
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

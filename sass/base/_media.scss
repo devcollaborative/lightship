@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.wp-element-caption {
+
+}
+
+// Default to 16/9 for all video embeds.
+.wp-block-embed.is-type-video iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
+}
+
+.wp-embed-aspect-4-3 iframe {
+  aspect-ratio: 4 / 3;
+}

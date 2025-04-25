@@ -9,8 +9,8 @@
 			"width": false
 		},
     "layout": {
-			"contentSize": "51rem",
-			"wideSize": "70rem"
+			"contentSize": "var(--page-width)",
+			"wideSize": "var(--page-width-wide)"
 		},
     "color": {
       "palette": [],
