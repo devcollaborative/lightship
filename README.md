@@ -1,12 +1,23 @@
-LightShip
-===
+# LightShip
 
 LightShip is a minimalist starter theme for WordPress founded on the tenets of simplicity, accessibility and infrastructure sustainability.
 
 It's still a work in progress, if you run into any issues or improvements please open an issue or pull-request.
 
-Getting Started
----------------
+## Changelog
+
+### 2.0
+
+Released: April 28, 2025
+
+- Install Timber with composer
+- Timber 2.0 compatibility changes
+- Update styles & add content widths
+- Add SVG sprite and default social media icons
+
+**Full Changelog**: https://github.com/devcollaborative/lightship/commits/2.0
+
+## Getting Started
 
 ### Requirements
 
@@ -86,6 +97,7 @@ This is by design, and at the core of LightShip's mission. We reduce complexity 
 ```
 
 #### `acf-json`
+
 Adds support for Advanced Custom Fields [local JSON](https://www.advancedcustomfields.com/resources/local-json/).
 
 Fields will be saved as .json files and can be tracked with version control. ACF will load the settings from files.
@@ -93,10 +105,13 @@ Fields will be saved as .json files and can be tracked with version control. ACF
 ACF fields should be edited on a local dev, and never on the server.
 
 #### `style.css`
+
 Used for setting theme metadata, and is not enqueued on the front-end. Front-end styles are compiled and loaded from `assets/css/style.css`.
 
 #### `theme.json`
+
 Features like color palette, font sizes, etc. are disabled on a global level and can be enabled per-block as needed. When new blocks are added to core, these features will be disabled by default.
 
 ### Timber
+
 Docs: https://timber.github.io/docs/
