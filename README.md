@@ -22,7 +22,6 @@ Released: April 28, 2025
 ### Requirements
 
 - WordPress 6
-- [Timber plugin](https://wordpress.org/plugins/timber-library/)
 - [Node.js](https://nodejs.org/)
 - [Gulp](https://getcomposer.org/)
 - [wp-cli](https://wp-cli.org/) (optional)
@@ -69,31 +68,39 @@ This is by design, and at the core of LightShip's mission. We reduce complexity 
 │   └── js/
 │       ├── block-editor.js
 │       └── navigation.js
+├── blocks/                   # files for individual custom blocks
+│   └── testimonial/          # ACF block
+│       ├── editor.scss       # - Editor styles
+│       ├── style.scss        # - Front-end styles
+│       ├── testimonial.twig  # - Block template
+│       └── testimonial.php   # - Register block
+├── composer.json
+├── composer.lock
 ├── functions.php                 # Loads all functionality
 ├── gulpfile.js
 ├── inc/
-│   ├── blocks/
-│   │   └── testimonial/          # ACF block
-│   │       ├── editor.scss       # - Editor styles
-│   │       ├── style.scss        # - Front-end styles
-│   │       ├── testimonial.twig  # - Block template
-│   │       └── testimonial.php   # - Register block
 │   ├── post-types/
 │   ├── taxonomies/
 │   ├── assets.php
 │   ├── block-editor.php
 │   ├── nav-menus.php
-│   ├── sidebars.php
 │   ├── template-functions.php
-│   ├── template-tags.php
 │   └── theme-setup.php
 ├── package-lock.json
 ├── package.json
 ├── patterns                      # Block template patterns
 │   └── button-group.php
 ├── sass/
+├── sprite/
+│   └── svg/
 ├── style.css                     # Theme metadata
-└── theme.json
+├── theme.json
+├── templates/
+└── vendor/                       #Timber 2.0 and Twig
+    ├── composer/
+    ├── symfony/
+    ├── timber/
+    └── twig/
 ```
 
 #### `acf-json`
@@ -114,4 +121,5 @@ Features like color palette, font sizes, etc. are disabled on a global level and
 
 ### Timber
 
+Timber 2.0 is integrated with the theme
 Docs: https://timber.github.io/docs/
