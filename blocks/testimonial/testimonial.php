@@ -1,7 +1,12 @@
 <?php
 
 /**
- * Register testimonial block.
+ * Register testimonial block. Demo. 
+ * 
+ * @todo add 'acf/testimonial' to inc/block-editor.php  lightship_allowed_block_types()
+ * to allow WP GUI access to this block. 
+ * @todo create fields for this block in ACF Pro
+ * @todo remove hardcoded image
  */
 function lightship_init_testimonial() {
     if ( ! function_exists( 'acf_register_block_type' ) ) {
@@ -11,7 +16,7 @@ function lightship_init_testimonial() {
     acf_register_block_type(array(
         'name'              => 'testimonial',
         'title'             => 'Testimonial',
-        'description'       => 'A custom testimonial block.',
+        'description'       => 'DevCollab custom testimonial block.',
         'render_callback'   => 'lightship_render_testimonial',
         'category'          => 'formatting',
         'icon'              => 'admin-comments',

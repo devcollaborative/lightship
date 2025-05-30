@@ -26,7 +26,7 @@ if ( ! class_exists( 'Timber' ) ) {
 /**
  * Sets the directories (inside your theme) to find .twig files
  */
-Timber::$dirname = array( 'templates', 'inc/blocks' );
+Timber::$dirname = array( 'templates', 'blocks' );
 
 /**
  * This is where you add some context.
