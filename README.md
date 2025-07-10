@@ -92,7 +92,7 @@ This is by design, and at the core of LightShip's mission. We reduce complexity 
 │   └── button-group.php
 ├── sass/
 ├── sprite/
-│   └── svg/
+│   ├── svg/
 ├── style.css                     # Theme metadata
 ├── theme.json
 ├── templates/
