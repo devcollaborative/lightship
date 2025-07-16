@@ -1,0 +1,1 @@
+{"version":3,"sources":["sample-block/sample-block.scss"],"names":[],"mappings":"AAKA,wBACG,YAAA,CACA,wBAAA","file":"sample-block.css","sourcesContent":["/**\n * Front-end styles\n * Should be imported in style.css & block-editor.scss.\n */\n\n.testimonial-blockquote {\n   padding: 2rem;\n   background-color: #efefef;\n}"]}
