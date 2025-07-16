@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/sample-block",
+  "title": "Sample Block",
+  "description": "A block to demonstrate ACF custom blocks.",
+  "style": [ "file:./../../assets/css/sample-block/sample-block.css" ],
+  "editorStyle": "file:./../../assets/css/sample-block/sample-block-editor.css",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [],
+  "supports": {
+    "anchor": false,
+    "align": false
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "sample-block.php"
+  }
+}

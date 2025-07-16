@@ -20,7 +20,6 @@ require get_template_directory() . '/inc/assets.php';
 
 // Block editor setup & custom blocks.
 require get_template_directory() . '/inc/block-editor.php';
-require get_template_directory() . '/blocks/testimonial/testimonial.php';
 
 // Register nav menus.
 require get_template_directory() . '/inc/nav-menus.php';

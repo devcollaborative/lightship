@@ -3,15 +3,7 @@
 {% block content %}
   <article class="wp-block-post-content">
     <h1>{{ post.title }}</h1>
-
-    {# Example of sending data to partial #}
-    {% include "testimonial/testimonial.twig" with {
-        text: 'My custom testimonial',
-        author: 'DevCollaborative',
-        role: 'Admin',
-        image: 'https://picsum.photos/id/237/200/300'
-    } %}
-
+    
     {{ post.content }}
   </article>
 {% endblock %}
