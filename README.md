@@ -88,8 +88,6 @@ This is by design, and at the core of LightShip's mission. We reduce complexity 
 │   └── theme-setup.php
 ├── package-lock.json
 ├── package.json
-├── patterns                      # Block template patterns
-│   └── button-group.php
 ├── sass/
 ├── sprite/
 │   ├── svg/
