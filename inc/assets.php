@@ -25,6 +25,14 @@ function lightship_assets() {
 	 * Scripts
 	 */
 	wp_enqueue_script(
+		'lightship/disclosure',
+		get_template_directory_uri() . '/components/disclosure/disclosure-element.js',
+		array(),
+		filemtime( get_template_directory() . '/templates/components/disclosure-element.js' ),
+		true
+	);
+
+	wp_enqueue_script(
 		'lightship/navigation',
 		get_template_directory_uri() . '/assets/js/navigation.js',
 		array(),

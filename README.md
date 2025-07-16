@@ -74,6 +74,11 @@ This is by design, and at the core of LightShip's mission. We reduce complexity 
 │       ├── style.scss        # - Front-end styles
 │       ├── testimonial.twig  # - Block template
 │       └── testimonial.php   # - Register block
+├── components/                # Helper components that aren't blocks
+│   └── disclosure/            # Disclosure toggle component
+│       ├── disclosure-element.js
+│       ├── disclosure-element.scss
+│       └── disclosure-element.twig
 ├── composer.json
 ├── composer.lock
 ├── functions.php                 # Loads all functionality

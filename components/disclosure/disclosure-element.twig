@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Disclosure Element component.
+ *
+ * Slots:
+ *   - button: The inner HTML for the button (will be wrapped in a <button>).
+ *   - content: The content that should be shown when the disclosure element is open.
+ *
+ * Props:
+ *   - class (string): Custom class for the element.
+ *   - expanded (boolean, default: false): Initial expanded state.
+ *   - popover (boolean, default: true): If true, a popover covers other content and closes on click or focus outside.
+ */
+#}
+{% set id = ('disclosure-element-' ~ random()) %}
+{% set expanded = expanded|default(false) ? 'true' : 'false' %}
+{% set popover = popover is not defined or popover %}
+
+{% set element_classes = ['disclosure-element', class]|join(' ')  %}
+{% set button_classes  = ['disclosure-element__button', class ? class|sanitize ~ '__button']|join(' ')  %}
+{% set content_classes = ['disclosure-element__content', class ? class|sanitize ~ '__content']|join(' ')  %}
+
+<div class="{{ element_classes }}">
+  <button class="{{ button_classes }}" aria-expanded="{{ expanded }}" aria-controls="{{ id }}" {{ popover ? 'data-popover' : '' }}>
+    {% block button %}
+      {{ button_content }}
+    {% endblock %}
+  </button>
+
+  <div id="{{ id }}" class="{{ content_classes }}">
+    {% block content %}
+      {{ content_content }}
+    {% endblock %}
+  </div>
+</div>

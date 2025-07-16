@@ -1,0 +1,43 @@
+.disclosure-element {
+  display: block;
+}
+
+.disclosure-element__button {
+  border: 0;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+.disclosure-element__button[aria-expanded="false"] + .disclosure-element__content {
+  display: none;
+}
+
+.disclosure-element__button[aria-expanded="true"][data-popover] {
+  position: relative;
+
+  & + .disclosure-element__content {
+    position: absolute;
+    left: 0;
+  }
+
+  & + .disclosure-element__content--right {
+    left: initial;
+    right: 0;
+  }
+
+  // Add transparent area to allow for hover without the tooltip disappearing
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -38px;
+    left: 0;
+    z-index: -1;
+  }
+
+  // @media (min-width: bp-em(400)) {
+  //   width: 300px;
+  // }
+}
