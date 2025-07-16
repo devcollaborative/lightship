@@ -56,17 +56,6 @@
 
 }
 
-@mixin small-heading {
-  margin-bottom: rem-calc(20);
-  font-family: $georgia;
-  font-size: clamp(rem-calc(18), 3vw, rem-calc(20));
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: 0.71px;
-  color: $blue;
-  text-transform: uppercase;
-}
-
 // -----------------------------------------------------------------------------
 // Utility Mixins
 // -----------------------------------------------------------------------------
@@ -111,22 +100,29 @@
 // Theme Mixins
 // -----------------------------------------------------------------------------
 @mixin button {
-  border: solid 1px var(--background, orange);
-  background-color: var(--background, orange);
-  color: var(--foreground, $black);
+  padding: rem-calc(10) rem-calc(24);
+  border-radius: 50px;
+  border: solid 1px var(--background, #01647c);
+  background-color: var(--background, #01647c);
+  font-family: $system-serif;
+  font-size: rem-calc(18);
+  font-weight: bold;
+  color: var(--foreground, $white);
+  line-height: 1.2;
   text-decoration: none;
   transition: background-color $transition, color $transition, border $transition;
   cursor: pointer;
 
   &:hover, &:active, &:focus {
-    border-color: var(--background-active, transparent);
-    background-color: var(--background-active, transparent);
-    color: var(--foreground-active, $black);
+    border-color: var(--background-active, currentColor);
+    background-color: var(--background-active, $white);
+    color: var(--foreground-active, #01647c);
     text-decoration: none;
   }
 }
 
-@mixin button-light {
-  --background-active: #{$white};
-  --foreground-active: #{$black};
+@mixin button-secondary {
+  --background: #F37143;
+  --foreground: #{$white};
+  --foreground-active: #F37143;
 }

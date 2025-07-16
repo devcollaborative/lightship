@@ -2,7 +2,10 @@
 @use "../abstracts" as *;
 
 h1, h2, h3, h4, h5, h6 {
-
+  margin-top: 0;
+  margin-bottom: .5em;
+  font-family: $system-serif;
+  color: #01647c;
 }
 
 h1 {
@@ -60,9 +63,16 @@ sub {
 }
 
 a {
-  transition: all $transition;
+  color: #01647c;
+  transition: color $transition;
 
   &:hover, &:focus, &:active {
-
+    color: #474442;
+    text-decoration: none;
   }
+}
+
+.wp-block-heading + .alignwide,
+.wp-block-heading + .alignfull {
+  margin-top: calc(var(--block-spacing) * 2);
 }

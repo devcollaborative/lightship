@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+// Add page margin when block is full width
+.wp-block-group.alignfull {
+  padding-right: $page-margin;
+  padding-left: $page-margin;
+}
+
+// Add spacing to nested blocks
+:where(.wp-block-group > *) {
+  margin-bottom: var(--block-spacing);
+}

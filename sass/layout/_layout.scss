@@ -3,30 +3,33 @@
 .site-main {
   padding-left: $page-margin;
   padding-right: $page-margin;
-  outline: $debug-orange;
 }
 
 // ---------------------------------------------------
 // Sets some default block spacing.
 // ---------------------------------------------------
+:root {
+	--block-spacing: #{$vertical-spacing * 2.5};
+}
+
 .wp-block-post-content {
-	outline: $debug-blue;
+	margin-top: var(--header-margin)
 }
 
 // add extra spacing for the last block on the page
 .wp-block-post-content:last-child > :first-child {
-	margin-bottom: $vertical-spacing * 2.5;
+	margin-bottom: var(--block-spacing);
 }
 
 /* provide default spacing for all blocks */
 .wp-block-post-content > *:not(p, .wp-block-heading, .alignleft, .alignright) {
-	margin-bottom: $vertical-spacing * 2.5;
+	margin-bottom: var(--block-spacing);
 }
 
 /* increase spacing of align wide blocks  */
 .wp-block-post-content > .alignwide {
-	margin-top: $vertical-spacing * 2;
-	margin-bottom: $vertical-spacing * 2;
+	margin-top: var(--block-spacing);
+	margin-bottom: var(--block-spacing);
 }
 
 /* remove spacing from align full blocks */
@@ -37,7 +40,7 @@
 
 /* add space between full and non-full width blocks */
 .wp-block-post-content > .alignfull + :not(.alignfull) {
-	margin-top: $vertical-spacing * 2;
+	margin-top: var(--block-spacing);
 }
 
 /* add extra spacing for the last block on the page */
@@ -47,7 +50,7 @@
 
 /* remove bottom spacing from the last block on the page if it is align full */
 .wp-block-post-content > :last-child.alignfull {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .wp-block-post-content {
@@ -55,11 +58,11 @@
 		max-width: var(--page-width);
 		margin-left: auto;
 		margin-right: auto;
-		outline: $debug-green;
 	}
 
 	.alignfull {
-		max-width: calc(100% + ($page-margin * 2));
+		width: calc(100% + ($page-margin * 2));
+		max-width: none;
 		transform: translateX($page-margin * -1);
 	}
 
@@ -107,5 +110,4 @@
 
 .alignfull, .alignwide {
 	clear: both; // Don't float wide or full-width blocks.
-	max-width: 100%;
 }

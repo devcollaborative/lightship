@@ -4,7 +4,8 @@
 
 @use 'base';        // Base styles used throughout the site
 @use 'layout';      // Global layout styles
-@use 'components';  // Non-block components
+@use 'blocks';      // Core block styles
+@use 'components';      // Global layout styles
 @use '../components/disclosure/disclosure-element.scss';
 @use 'pages';
 @use "print";

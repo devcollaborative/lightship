@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.wp-block-separator:not(.is-style-wide) {
+  max-width: 300px !important; // add specificity to override editor styles
+  border-top-width: 4px;
+}
+
+.wp-block-separator.is-style-wide {
+  border-top-width: 1px;
+}

@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.wp-block-quote {
+  font-style: italic;
+
+  cite::before {
+    content: '– ';
+  }
+}
+
+.wp-block-quote.is-style-pullquote {
+  font-weight: bold;
+  font-size: 2em;
+  background-color: #f3f3f3;
+  padding: 1rem;
+}

@@ -11,9 +11,6 @@ textarea {
   line-height: $base-line-height; // 1
 }
 
-.button,
-button,
-input[type="button"],
 input[type="submit"],
 input[type="reset"] {
   @include button;

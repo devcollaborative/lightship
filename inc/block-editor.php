@@ -31,6 +31,8 @@ add_action( 'enqueue_block_editor_assets', 'lightship_block_styles' );
  * Define block editor support & features.
  */
 function lightship_block_editor_setup() {
+	add_theme_support( 'responsive-embeds' );
+
 	// Enable editor styles compatibility.
 	add_theme_support( 'editor-styles' );
 
@@ -48,6 +50,11 @@ function lightship_block_editor_setup() {
 
 	// Disable pattern directory.
 	add_filter( 'should_load_remote_block_patterns', '__return_false' );
+
+	// Load separate CSS files for core blocks.
+	// Disabled until these can be loaded in the header.
+	// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+	// add_filter( 'should_load_block_assets_on_demand', '__return_true' );
 }
 add_action( 'after_setup_theme', 'lightship_block_editor_setup' );
 
