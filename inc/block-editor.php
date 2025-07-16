@@ -75,6 +75,17 @@ function lightship_allowed_block_types() {
 		'core/quote',
 		'core/shortcode',
 		'core/video',
+
+		// Custom blocks
+		'acf/sample-block',
 	);
 }
 add_filter( 'allowed_block_types_all', 'lightship_allowed_block_types' );
+
+/**
+ * Register custom blocks.
+ */
+function lightship_register_blocks() {
+	register_block_type( dirname(__DIR__) . '/blocks/sample-block' );
+}
+add_action( 'init', 'lightship_register_blocks' );
