@@ -28,7 +28,7 @@ function lightship_assets() {
 		'lightship/disclosure',
 		get_template_directory_uri() . '/components/disclosure/disclosure-element.js',
 		array(),
-		filemtime( get_template_directory() . '/templates/components/disclosure-element.js' ),
+		filemtime( get_template_directory() . '/components/disclosure/disclosure-element.js' ),
 		true
 	);
 
