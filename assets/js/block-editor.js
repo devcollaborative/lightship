@@ -23,8 +23,10 @@ wp.domReady(() => {
 	 *
 	 */
 	var enabledStyles = {
-		'core/quote': ['plain'],
+		'core/separator': ['default', 'wide'],
+		'core/quote': ['default'],
 	};
+
 	wp.blocks.getBlockTypes().forEach((block) => {
 		block['styles'].forEach(style => {
 			if (!enabledStyles[block.name]?.includes(style.name)) {
@@ -48,7 +50,41 @@ wp.domReady(() => {
 		{
 			name: 'secondary',
 			label: 'Secondary',
-			isDefault: false,
+		}
+	]);
+
+	wp.blocks.registerBlockStyle( 'core/paragraph', [
+		{
+			name: 'default',
+			label: 'Default',
+			isDefault: true,
+		},
+		{
+			name: 'intro',
+			label: 'Intro',
+		}
+	]);
+
+	wp.blocks.registerBlockStyle( 'core/quote', [
+		{
+			name: 'pullquote',
+			label: 'Pullquote',
+		}
+	]);
+
+	wp.blocks.registerBlockStyle('core/media-text', [
+		{
+			name: 'default',
+			label: 'Default',
+			isDefault: true,
+		}
+	]);
+
+	wp.blocks.registerBlockStyle('core/group', [
+		{
+			name: 'default',
+			label: 'Default',
+			isDefault: true,
 		}
 	]);
 

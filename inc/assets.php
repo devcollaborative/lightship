@@ -25,6 +25,14 @@ function lightship_assets() {
 	 * Scripts
 	 */
 	wp_enqueue_script(
+		'lightship/disclosure',
+		get_template_directory_uri() . '/components/disclosure/disclosure-element.js',
+		array(),
+		filemtime( get_template_directory() . '/components/disclosure/disclosure-element.js' ),
+		true
+	);
+
+	wp_enqueue_script(
 		'lightship/navigation',
 		get_template_directory_uri() . '/assets/js/navigation.js',
 		array(),
@@ -35,6 +43,10 @@ function lightship_assets() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Remove emoji styles.
+	wp_deregister_style( 'wp-emoji-styles' );
+
 }
 add_action( 'wp_enqueue_scripts', 'lightship_assets' );
 

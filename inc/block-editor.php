@@ -31,14 +31,13 @@ add_action( 'enqueue_block_editor_assets', 'lightship_block_styles' );
  * Define block editor support & features.
  */
 function lightship_block_editor_setup() {
+	add_theme_support( 'responsive-embeds' );
+
 	// Enable editor styles compatibility.
 	add_theme_support( 'editor-styles' );
 
-	// Add support for wide & full width blocks.
-	add_theme_support ( 'align-wide' );
-
-	// Disable Full Site Editing.
-	remove_theme_support( 'block-templates' );
+	// Enable block-based template parts which are parts/*.html files
+	add_theme_support( 'block-template-parts' );
 
 	// Disable block editor for widgets.
 	remove_theme_support( 'widgets-block-editor' );
@@ -48,6 +47,11 @@ function lightship_block_editor_setup() {
 
 	// Disable pattern directory.
 	add_filter( 'should_load_remote_block_patterns', '__return_false' );
+
+	// Load separate CSS files for core blocks.
+	// Disabled until these can be loaded in the header.
+	// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+	// add_filter( 'should_load_block_assets_on_demand', '__return_true' );
 }
 add_action( 'after_setup_theme', 'lightship_block_editor_setup' );
 
@@ -59,22 +63,61 @@ add_action( 'after_setup_theme', 'lightship_block_editor_setup' );
  */
 function lightship_allowed_block_types() {
 	return array(
+		'core/audio',
 		'core/buttons',
 		'core/button',
+		'core/column',
+		'core/columns',
+		'core/cover',
+		'core/details',
 		'core/embed',
 		'core/file',
-		'core/freeform',
+		'core/group',
 		'core/gallery',
 		'core/heading',
 		'core/html',
 		'core/image',
 		'core/list',
 		'core/list-item',
+		'core/media-text',
 		'core/more',
 		'core/paragraph',
 		'core/quote',
+		'core/pullquote',
+		'core/separator',
 		'core/shortcode',
+		'core/spacer',
 		'core/video',
+		'core/search',
+
+		//Query Loop component blocks
+		'core/post-author',
+		'core/post-author-name',
+		'core/post-date',
+		'core/post-excerpt',
+		'core/post-featured-image',
+		'core/post-template',
+		'core/post-terms',
+		'core/post-title',
+		'core/query',
+		'core/query-no-results',
+		'core/query-pagination-next',
+		'core/query-pagination-numbers',
+		'core/query-pagination-previous',
+		'core/query-pagination',
+		'core/query-total',
+		'core/block', // patterns
+
+		// Custom blocks
+		'acf/sample-block',
 	);
 }
 add_filter( 'allowed_block_types_all', 'lightship_allowed_block_types' );
+
+/**
+ * Register custom blocks.
+ */
+function lightship_register_blocks() {
+	register_block_type( dirname(__DIR__) . '/blocks/sample-block' );
+}
+add_action( 'init', 'lightship_register_blocks' );

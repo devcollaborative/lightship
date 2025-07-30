@@ -18,6 +18,11 @@ import { deleteSync } from 'del';             // Delete generated files when nee
 import plumber from 'gulp-plumber';           // Used to catch errors and continue build.
 import svgSprite from "gulp-svg-sprite";      // Build svg-sprite to make referencing SVG icons easier.
 
+const sassPaths = [
+  'sass/**/*.scss',
+  'blocks/**/*.scss'
+];
+
 // Clean up existing compiled files.
 export function clean(done) {
   deleteSync('css/*');
@@ -27,7 +32,7 @@ export function clean(done) {
 
 // Compile sass to css.
 export function css() {
-  return src('sass/**/*.scss')
+  return src(sassPaths)
     .pipe(plumber(function (error) {
       console.log(error.message);
       this.emit('end');
@@ -64,7 +69,7 @@ export function svg() {
 
 // Watch sass files & rebuild on any changes.
 export function watchFiles() {
-  watch('sass/**/*.scss', series('css'));
+  watch(sassPaths, series('css'));
   watch('sprite/svg/*.svg', series('svg'));
 }
 

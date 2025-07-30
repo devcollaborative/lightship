@@ -20,13 +20,15 @@ require get_template_directory() . '/inc/assets.php';
 
 // Block editor setup & custom blocks.
 require get_template_directory() . '/inc/block-editor.php';
-require get_template_directory() . '/blocks/testimonial/testimonial.php';
 
 // Register nav menus.
 require get_template_directory() . '/inc/nav-menus.php';
 
 // Functions which enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-functions.php';
+
+// Customize login page.
+require get_template_directory() . '/inc/login-page.php';
 
 // Register & remove support for theme features.
 require get_template_directory() . '/inc/theme-setup.php';

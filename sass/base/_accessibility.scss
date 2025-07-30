@@ -25,7 +25,7 @@
   }
 }
 
-:is(button, input, textarea, select, .facetwp-radio, .facetwp-checkbox) {
+:is(button, input, textarea, select, .button, .wp-element-button, .facetwp-radio, .facetwp-checkbox) {
   --outline-offset: -2px;
 }
 

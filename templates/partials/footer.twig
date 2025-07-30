@@ -1,12 +1,30 @@
 <footer class="site-footer">
-  <div class="site-footer__inner">
-    <nav class="site-footer-menu" aria-label="Footer navigation">
+  <div class="site-footer__inner site-footer__top">
+    <a class="site-footer-branding" href="{{ site.link }}" rel="home">
+      <img src="{{ theme.link }}/assets/img/logo.svg" alt="{{ site.name }}">
+    </a>
+
+    <nav class="site-footer-menu">
+      <h2 class="screen-reader-text">Footer navigation</h2>
       {% include "partials/menu.twig" with { 'menu': footer_menu.get_items } %}
     </nav>
 
-    <div class="site-info">
-      &copy; {{ 'now'|date('Y') }} {{ site.name }}
-      {% include "partials/menu-social-media.twig" with { 'menu': social_media_menu.get_items } %}
+    <div class="site-footer-signup">
+      <h2>Subscribe to Our Newsletter</h2>
+      <form class="" action="" method="post" id="" accept-charset="UTF-8">
+        <div class="">
+          <label for="edit-email" class="">Email</label>
+          <input type="email" id="edit-email" name="email" value="" size="60" maxlength="254" class="form-email required" required="required" aria-required="true">
+        </div>
+        <div class="" id="edit-actions">
+          <input class="webform-button--submit button button--primary" type="submit" id="edit-actions-submit" name="op" value="Subscribe">
+        </div>
+      </form>
     </div>
+  </div>
+
+  <div class="site-footer__inner site-footer__bottom">
+    <div>&copy; {{ 'now'|date('Y') }} {{ site.name }}</div>
+    {% include "partials/menu-social-media.twig" with { 'menu': social_media_menu.get_items } %}
   </div>
 </footer>

@@ -28,9 +28,16 @@
       "letterSpacing": false,
       "customFontSize": false,
       "fontStyle": false,
-			"fontWeight": false,
+      "fontWeight": false,
       "fontFamilies": [],
-      "fontSizes": []
+      "defaultFontSizes": false
+    },
+    "spacing": {
+      "defaultSpacingSizes": false
+    },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": []
     },
     "blocks": {
 			"core/button": {

@@ -1,0 +1,60 @@
+@use "../abstracts" as *;
+
+.search-disclosure__button {
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.search-disclosure__content {
+  @media (max-width: $up-to-desktop) {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    padding: 1rem;
+    background-color: #d6d6d6;
+  }
+
+  @media (min-width: $desktop) {
+    display: block !important;
+  }
+}
+
+.search-form {
+  position: relative;
+
+  .search-field {
+    background-color: transparent;
+    padding: rem-calc(8);
+    padding-right: rem-calc(30); // extra space for the submit button
+    line-height: 1;
+    width: 100%;
+    max-width: 100%;
+
+    @media (min-width: $desktop) {
+      max-width: 175px;
+    }
+
+    &::placeholder {
+      opacity: .7;
+    }
+  }
+
+  .search-submit {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    padding: 0 rem-calc(8);
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    color: $black;
+
+    &:hover, &:active, &:focus {
+      background-color: transparent;
+      color: $black;
+    }
+  }
+}

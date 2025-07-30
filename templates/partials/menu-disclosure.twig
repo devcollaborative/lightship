@@ -1,0 +1,32 @@
+{% if menu %}
+	<ul class="disclosure-menu disclosure-menu--{{ direction == 'vertical' ? 'vertical' : 'horizontal'}}">
+		{% for item in menu %}
+			<li class="{{ item.classes | join(' ') }}">
+				{% if item.link == '#' %}
+					<span class="menu-item-link menu-item-link--level-1">{{ item.title }}</span>
+				{% else %}
+					<a target="{{ item.target }}" href="{{ item.link }}" class="menu-item-link menu-item-link--level-1">{{ item.title }}</a>
+				{% endif %}
+
+				{% if item.children %}
+					{% embed 'disclosure/disclosure-element.twig' with { class: 'submenu-disclosure', popover: direction == 'vertical' ? false : true, expanded: false } %}
+						{% block button %}
+							<span class="screen-reader-text">{{ item.title ~ ' ' }}
+								{{ __('submenu', 'lightship') }}</span>
+							{{ icon('caret') }}
+						{% endblock %}
+						{% block content %}
+							<ul class="sub-menu">
+								{% for item in item.children %}
+									<li class="{{ item.classes | join(' ') }}">
+										<a target="{{ item.target }}" href="{{ item.link }}" class="menu-item-link--level-2">{{ item.title }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endblock %}
+					{% endembed %}
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}

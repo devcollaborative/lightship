@@ -3,14 +3,13 @@
 @use "sass:math";
 @use "../abstracts" as *;
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  // Theme Variables
+:root {
   --page-width: #{$page-width};
-  --content-wide: #{$page-width-wide};
+  --page-width-wide: #{$page-width-wide};
+  --page-width: 900px;
+  --page-width-wide: 1200px;
+
+  // Theme Variables
   --header-margin: #{rem-calc(60)};
   --footer-margin: #{rem-calc(60)};
 
@@ -18,20 +17,29 @@ body {
   --wp--style--block-gap: #{$vertical-spacing};
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
-  font-size: 100%; // respect browser font size setting
+  font-size: 100% * math.div($base-font-size, 16);
   line-height: $base-line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
+  overflow-x: clip;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: $georgia;
-  font-size: clamp(rem-calc(18), 3vw, rem-calc(20));
+  font-family: $system;
+  overflow-x: clip;
 }
 
 // 1. Inherit theme styles.
@@ -69,13 +77,14 @@ figcaption {
 }
 
 strong.geomanist {
-  font-family: $georgia;
+  font-family: $system-serif;
   font-weight: 500;
 }
 
 svg {
   height: auto;
   display: block;
+  pointer-events: none; // prevents SVGs from blocking JS click events
 }
 
 .menu {

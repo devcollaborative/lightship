@@ -1,7 +1,5 @@
 <?php
 
-use Timber;
-
 /**
  * This ensures that Timber is loaded and available as a PHP class.
  * If not, it gives an error message to help direct developers on where to activate
@@ -26,7 +24,7 @@ if ( ! class_exists( 'Timber' ) ) {
 /**
  * Sets the directories (inside your theme) to find .twig files
  */
-Timber::$dirname = array( 'templates', 'blocks' );
+Timber::$dirname = array( 'templates', 'components', 'blocks' );
 
 /**
  * This is where you add some context.

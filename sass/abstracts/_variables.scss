@@ -26,10 +26,14 @@
 // -----------------------------------------------------------------------------
 // Mobile-First Breakpoints - use bp-em to convert pixels to ems
 // -----------------------------------------------------------------------------
-$mobile: bp-em(679);
+$mobile: bp-em(420);
+$up-to-tablet: bp-em(679);
 $tablet: bp-em(680);
+$up-to-tablet-plus: bp-em(959);
 $tablet-plus: bp-em(960);
+$up-to-desktop: bp-em(1099);
 $desktop: bp-em(1100);
+$up-to-desktop-plus: bp-em(1439);
 $desktop-plus: bp-em(1440);
 $print: "print";
 
@@ -39,17 +43,15 @@ $print: "print";
 $white: #fff;
 $black: #000;
 
-
 // -----------------------------------------------------------------------------
 // Font Stacks and Sizes
 // @font-face definitions should be defined in base/_fonts.scss
 // -----------------------------------------------------------------------------
-$georgia: Georgia, "Times New Roman", serif;
-$verdana: Verdana, Tahoma, sans-serif;
+$system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$system-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;;
 
 $base-font-size: 20; // Pixel value only, no px unit
-$base-line-height: 1.4;
-
+$base-line-height: 1.5;
 
 // -----------------------------------------------------------------------------
 // Units
@@ -60,17 +62,9 @@ $base-line-height: 1.4;
 
 // Widths
 $page-width: rem-calc(900);
-$page-width-wide: rem-calc(1100);
-$page-width-extra-wide: rem-calc(1300);
-
-:root {
-  --page-width: #{$page-width};
-  --page-width-wide: #{$page-width-wide};
-  --page-width-extra-wide: #{$page-width-extra-wide};
-}
+$page-width-wide: rem-calc(1200);
 
 // Margins / Gutters
-$page-margin: rem-calc(20);
 $page-margin: rem-calc(20);
 
 // Spacing values
@@ -80,8 +74,7 @@ $vertical-spacing: $spacing;
 // -----------------------------------------------------------------------------
 // Other
 // -----------------------------------------------------------------------------
-$transition: .3s ease;
-
+$transition: .3s ease-in-out;
 
 // -----------------------------------------------------------------------------
 // Debugging
