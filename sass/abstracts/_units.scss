@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// Units
+// ** When you can...
+// ** Use REMs for sizes and spacing.
+// ** Use EMs for media queries.
+// -----------------------------------------------------------------------------
+@use './functions' as *;
+
+// Widths
+$page-width: rem-calc(900);
+$page-width-wide: rem-calc(1200);
+
+// Margins / Gutters
+$page-margin: rem-calc(20);
+
+// Spacing values
+$spacing: rem-calc(16);
+$vertical-spacing: $spacing;
+
+// -----------------------------------------------------------------------------
+// Mobile-First Breakpoints - use bp-em to convert pixels to ems
+// -----------------------------------------------------------------------------
+$mobile: bp-em(420);
+$up-to-tablet: bp-em(679);
+$tablet: bp-em(680);
+$up-to-tablet-plus: bp-em(959);
+$tablet-plus: bp-em(960);
+$up-to-desktop: bp-em(1099);
+$desktop: bp-em(1100);
+$up-to-desktop-plus: bp-em(1439);
+$desktop-plus: bp-em(1440);
+$print: "print";

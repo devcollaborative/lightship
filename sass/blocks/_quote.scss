@@ -1,16 +1,34 @@
 @use "../abstracts" as *;
 
 .wp-block-quote {
-  font-style: italic;
+  font-style: normal;
+
+  cite {
+    font-style: normal;
+    font-size: rem-calc(16);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $dark-blue;
+  }
 
   cite::before {
     content: '– ';
   }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.wp-block-quote:not(.is-style-pullquote) {
+  border-left: 4px solid $dark-blue;
+  padding-left: rem-calc(16);
 }
 
 .wp-block-quote.is-style-pullquote {
+  padding: 3rem;
+  background-color: $grey;
   font-weight: bold;
   font-size: 2em;
-  background-color: #f3f3f3;
-  padding: 1rem;
+  line-height: 1.2;
 }

@@ -11,23 +11,26 @@ textarea {
   line-height: $base-line-height; // 1
 }
 
-input[type="submit"],
-input[type="reset"] {
+button:is([type="button"], [type="submit"], [type="reset"]),
+input:is([type="button"], [type="submit"], [type="reset"]) {
   @include button;
 }
 
 // Labels & Legend
 // -----------------------------
 legend,
-label {
+label,
+.facet-label {
 	display: inline-block;
+  margin-bottom: rem-calc(8);
 	font-weight: bold;
 }
 
 // Input styles
 // -----------------------------
 select, input, textarea {
-	--outline-offset: -2px; // align outline with element border
+	--outline-offset: 0; // align outline with element border
+  padding: rem-calc(10) rem-calc(12);
 	border: 1px solid $black;
   border-radius: 0; // iOS fix to override default rounded corners
 	background-color: var(--input-bg, $white);
@@ -48,14 +51,88 @@ select {
   appearance: none;
 }
 
-select, input::placeholder {
+input::placeholder {
   opacity: 1;
 }
 
-select:focus, input:focus::placeholder {
+input:focus::placeholder {
   opacity: .5;
 }
 
 // Checkboxes & Radio Buttons
 // -----------------------------
+.facetwp-checkbox-wrapper,
+.facetwp-radio-wrapper {
+  display: flex;
+  gap: 3px;
 
+  label {
+    margin-bottom: .25rem;
+    font-size: .9em;
+    font-weight: 600;
+  }
+}
+
+[type=radio],
+[type=checkbox],
+.facetwp-checkbox.facetwp-checkbox,
+.facetwp-radio.facetwp-radio {
+  position: relative;
+  appearance: none;
+  padding: 0;
+  background: none; // reset facetwp bg styles
+  background-color: var(--input-bg, $white);
+  width: 20px;
+  height: 20px;
+  border: 1px solid $black;
+
+  &:focus-visible {
+    outline: 2px solid currentColor !important;
+  }
+}
+
+[type=radio]:checked::before,
+[type=checkbox]:checked::before {
+  content: "✓";
+  position: absolute;
+  top: 9px;
+  left: 1px;
+  width: 100%;
+  height: 100%;
+  background: none;
+  line-height: 0;
+  color: $dark-blue;
+}
+
+.facetwp-checkbox.facetwp-checkbox.checked {
+  background-image: none;
+}
+
+// Facet-specific styles
+// -----------------------------
+.facetwp-facet.facetwp-facet {
+  margin-bottom: rem-calc(20);
+}
+
+.facetwp-input-wrap.facetwp-input-wrap {
+  display: block;
+}
+
+.facetwp-facet-reset.facetwp-facet-reset {
+  margin-bottom: 0;
+}
+
+.facetwp-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem-calc(10) rem-calc(10);
+
+  .facetwp-facet {
+    margin: 0;
+  }
+}
+
+.facetwp-facet input {
+  width: 100%;
+  min-width: auto;
+}

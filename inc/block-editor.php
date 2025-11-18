@@ -23,7 +23,7 @@ function lightship_block_styles() {
    * Version param must be set to null to load multiple font families.
    * @see https://core.trac.wordpress.org/ticket/49742
    */
-  wp_enqueue_style( 'lightship/fonts','https://fonts.googleapis.com/css2?family=Fredoka+One&family=Work+Sans:wght@300&display=swap', array(), null );
+  wp_enqueue_style( 'lightship/fonts','https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap', array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'lightship_block_styles' );
 

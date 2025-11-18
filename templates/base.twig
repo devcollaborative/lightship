@@ -22,9 +22,9 @@
 
 							{% embed 'disclosure/disclosure-element.twig' with { class: 'navigation-disclosure' } %}
 								{% block button %}
-									{{ __('Menu', 'lightship') }}
 									{{ icon('menu') }}
 									{{ icon('close') }}
+									{{ __('Menu', 'lightship') }}
 								{% endblock %}
 								{% block content %}
 									{% include "partials/menu-disclosure.twig" with { 'menu': primary_menu.get_items, 'direction': 'vertical' } %}
@@ -37,7 +37,7 @@
 						{#  Search form - shared on mobile & desktop #}
 						{% embed 'disclosure/disclosure-element.twig' with { class: 'search-disclosure' } %}
 							{% block button %}
-								<span class="screen-reader-text">{{ __('Search', 'lightship') }}</span>
+								<span>{{ __('Search', 'lightship') }}</span>
 								{{ icon('search') }}
 							{% endblock %}
 							{% block content %}
@@ -45,7 +45,7 @@
 									<label class="screen-reader-text" for="s">{{ __('Search', 'lightship') }}</label>
 									<input id="s" type="search" class="search-field" placeholder="{{ __('Search', 'lightship') }}" value="{{ fn('get_search_query') }}" name="s">
 									<button type="submit" class="search-submit">
-										<span class="screen-reader-text">{{ __('Search', 'ssi') }}</span>
+										<span class="screen-reader-text">{{ __('Search', 'lightship') }}</span>
 										{{ icon('search') }}
 									</button>
 								</form>

@@ -10,3 +10,14 @@
 :where(.wp-block-group > *) {
   margin-bottom: var(--block-spacing);
 }
+
+.wp-block-group.has-background {
+  padding: $vertical-spacing * 4 $page-margin;
+}
+
+// Remove space after last nested child
+.wp-block-group {
+  :last-child {
+    margin-bottom: 0;
+  }
+}

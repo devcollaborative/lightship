@@ -1,10 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<article>
-		<h1>Page Not Found</h1>
-		<p>Sorry, we couldn't find what you're looking for. Maybe try a search?</p>
-
-		{{ fn('get_search_form') }}
+	<article class="wp-block-post-content">
+		{{ fn('block_template_part', '404') }}
 	</article>
 {% endblock %}

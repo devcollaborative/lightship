@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// Size functions
+// -----------------------------------------------------------------------------
+@use "sass:math";
+@use './typography' as *;
+
+// Px to Em mixin
+// Ems for breakpoints, using browser context font size
+@function bp-em($pixels, $context: 16) {
+  @return #{math.div($pixels, $context)}em;
+}
+
+// Ems in relation to base font size
+@function em($pixels, $context: $base-font-size) {
+  @return #{math.div($pixels, $context)}em;
+}
+
+// Rem conversion
+// Convert pixel values to rem.
+@function rem-calc($pixels, $context: $base-font-size) {
+  @return math.div($pixels, $context) * 1rem;
+}

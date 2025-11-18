@@ -1,15 +1,15 @@
 @use "../abstracts" as *;
 
-a.button,
-.wp-block-button__link {
+.button,
+.wp-element-button {
   @include button;
 }
 
-a.button.button-secondary,
-.wp-block-button.is-style-secondary .wp-block-button__link {
+.button-secondary,
+.wp-block-button.is-style-secondary .wp-element-button {
   @include button-secondary;
 }
 
-.wp-block-button.is-style-arrow .wp-block-button__link::after {
+.wp-block-button.is-style-arrow .wp-element-button::after {
   content: ' →'
 }

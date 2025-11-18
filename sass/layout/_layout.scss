@@ -1,19 +1,35 @@
 @use "../abstracts" as *;
 
+// ---------------------------------------------------
+// Sets some default block spacing.
+// ---------------------------------------------------
+:root {
+	--block-spacing: #{$vertical-spacing * 1.5};
+
+	@media (min-width: $tablet) {
+		--block-spacing: #{$vertical-spacing * 2.5};
+	}
+}
+
+
+// ---------------------------------------------------
+// Site wide horizontal padding.
+// ---------------------------------------------------
 .site-main {
   padding-left: $page-margin;
   padding-right: $page-margin;
 }
 
 // ---------------------------------------------------
-// Sets some default block spacing.
+// Core block layout styles.
 // ---------------------------------------------------
-:root {
-	--block-spacing: #{$vertical-spacing * 2.5};
+.is-layout-grid {
+	display: grid;
+	gap: var(--block-spacing);
 }
 
 .wp-block-post-content {
-	margin-top: var(--header-margin)
+	margin-top: var(--header-margin);
 }
 
 // add extra spacing for the last block on the page
@@ -39,7 +55,7 @@
 }
 
 /* add space between full and non-full width blocks */
-.wp-block-post-content > .alignfull + :not(.alignfull) {
+.wp-block-post-content > .alignfull + :not(.alignfull, .alignright, .alignleft) {
 	margin-top: var(--block-spacing);
 }
 

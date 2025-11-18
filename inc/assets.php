@@ -19,26 +19,29 @@ function lightship_assets() {
 	 * Version string must be set to null to load multiple font families.
 	 * @see https://core.trac.wordpress.org/ticket/49742
 	 */
-	wp_enqueue_style( 'lightship/fonts','https://fonts.googleapis.com/css2?family=Fredoka+One&&family=Work+Sans:wght@300&display=swap', array(), null );
+	wp_enqueue_style( 'lightship/fonts','https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap', array(), null );
 
 	/**
 	 * Scripts
 	 */
-	wp_enqueue_script(
+	wp_register_script(
 		'lightship/disclosure',
 		get_template_directory_uri() . '/components/disclosure/disclosure-element.js',
 		array(),
 		filemtime( get_template_directory() . '/components/disclosure/disclosure-element.js' ),
-		true
+		[ 'strategy' => 'defer' ]
 	);
 
-	wp_enqueue_script(
+	wp_register_script(
 		'lightship/navigation',
 		get_template_directory_uri() . '/assets/js/navigation.js',
 		array(),
 		filemtime( get_template_directory() . '/assets/js/navigation.js' ),
-		true
+			[ 'strategy' => 'defer' ]
 	);
+
+	wp_enqueue_script('lightship/disclosure');
+	wp_enqueue_script('lightship/navigation');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -46,7 +49,6 @@ function lightship_assets() {
 
 	// Remove emoji styles.
 	wp_deregister_style( 'wp-emoji-styles' );
-
 }
 add_action( 'wp_enqueue_scripts', 'lightship_assets' );
 

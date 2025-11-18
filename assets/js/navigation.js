@@ -21,7 +21,7 @@
     const button = menuItem.querySelector( '.disclosure-element__button');
 
     if ( button ) {
-      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+      button.click();
     }
   }
 }() );

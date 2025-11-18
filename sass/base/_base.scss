@@ -13,8 +13,17 @@
   --header-margin: #{rem-calc(60)};
   --footer-margin: #{rem-calc(60)};
 
+
+  // Colors
+  --grey: #{$grey};
+  --blue: #{$blue};
+  --dark-blue: #{$dark-blue};
+
   // WP Overrides
   --wp--style--block-gap: #{$vertical-spacing};
+  --wp--style--row-gap: #{rem-calc(20)};
+  --wp--style--column-gap: #{rem-calc(20)};
+  --wp--style--gap: var(--wp--style--row-gap) var(--wp--style--column-gap);
 }
 
 * {
@@ -38,7 +47,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: $system;
+  font-family: $libre-franklin;
   overflow-x: clip;
 }
 
@@ -69,6 +78,7 @@ input {
 }
 
 figure {
+  width: 100%;
   margin: 0;
 }
 
@@ -76,9 +86,8 @@ figcaption {
 
 }
 
-strong.geomanist {
-  font-family: $system-serif;
-  font-weight: 500;
+cite {
+  font-style: normal;
 }
 
 svg {

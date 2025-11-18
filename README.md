@@ -6,6 +6,18 @@ It's still a work in progress, if you run into any issues or improvements please
 
 ## Changelog
 
+### 2.2.0
+
+Released: Nov 18, 2025
+
+**Full Changelog**: https://github.com/devcollaborative/lightship/commits/2.2.0
+
+### 2.1.0
+
+Released: April 28, 2025
+
+**Full Changelog**: https://github.com/devcollaborative/lightship/commits/2.1.0
+
 ### 2.0
 
 Released: April 28, 2025

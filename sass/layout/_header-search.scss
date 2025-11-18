@@ -1,43 +1,56 @@
 @use "../abstracts" as *;
 
 .search-disclosure__button {
-  @media (min-width: $desktop) {
+  display: flex;
+  align-items: center;
+  gap: rem-calc(8);
+  font-size: rem-calc(18);
+  font-weight: bold;
+
+  .icon {
+    width: 25px;
+    height: 25px;
+    margin-top: -4px;
+  }
+}
+
+.search-disclosure__button-label {
+  @media (max-width: $mobile) {
     display: none;
   }
 }
 
-.search-disclosure__content {
-  @media (max-width: $up-to-desktop) {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    padding: 1rem;
-    background-color: #d6d6d6;
-  }
-
-  @media (min-width: $desktop) {
-    display: block !important;
-  }
+.search-disclosure__content.search-disclosure__content {
+  position: absolute;
+  left: 50% !important;
+  top: calc(100% + 20px);
+  top: 100%;
+  width: 100vw;
+  padding: 1.5rem 1rem;
+  background-color: $blue;
+  transform: translateX(-50%);
+  z-index: 30;
 }
 
 .search-form {
   position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: rem-calc(600);
 
   .search-field {
-    background-color: transparent;
-    padding: rem-calc(8);
-    padding-right: rem-calc(30); // extra space for the submit button
-    line-height: 1;
     width: 100%;
     max-width: 100%;
-
-    @media (min-width: $desktop) {
-      max-width: 175px;
-    }
+    padding: rem-calc(8);
+    padding-right: rem-calc(30); // extra space for the submit button
+    background-color: $white;
+    border-color: currentColor;
+    color: $black;
+    line-height: 1;
 
     &::placeholder {
       opacity: .7;
+      color: $black;
     }
   }
 
@@ -50,11 +63,11 @@
     background-color: transparent;
     border: 0;
     border-radius: 0;
-    color: $black;
+    color: $blue;
 
     &:hover, &:active, &:focus {
       background-color: transparent;
-      color: $black;
+      color: $blue;
     }
   }
 }

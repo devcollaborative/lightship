@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+// Use white text for darker background colors
+.has-blue-background-color,
+.has-dark-blue-background-color {
+  --link: #{$white};
+  --link-active: #{$white};
+  --color: #{$white};
+  color: $white;
+
+  .wp-element-button.wp-element-button {
+    --background: transparent;
+    --foreground: #{$white};
+    --background-active: #{$white};
+    --foreground-active: #{$dark-blue};
+  }
+}

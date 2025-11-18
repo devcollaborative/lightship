@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+.wp-block-query {
+  a {
+    text-decoration: none;
+
+    &:hover, &:active, &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+// List
+.wp-block-post-template:not(.wp-block-post-template-is-layout-grid) {
+  .wp-block-post {
+    margin-bottom: var(--block-spacing);
+  }
+}
+
+// Grid
+.wp-block-post-template-is-layout-grid {
+  gap: rem-calc(40);
+  grid-template-columns: repeat(1, 1fr) !important;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .wp-block-post {
+    @include block-link;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wp-block-post-featured-image {
+    order: -1;
+    overflow: hidden;
+  }
+
+  .wp-block-post-title {
+    margin-top: var(--wp--style--block-gap);
+  }
+
+  .wp-block-post-excerpt {
+    font-size: .9em;
+  }
+  .wp-block-post-date {
+    font-size: .75em;
+  }
+}
+
