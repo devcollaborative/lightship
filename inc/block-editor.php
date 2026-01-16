@@ -64,6 +64,9 @@ add_action( 'after_setup_theme', 'lightship_block_editor_setup' );
 function lightship_allowed_block_types() {
 	return array(
 		'core/audio',
+		'core/accordion',
+		'core/accordion-panel',
+		'core/accordion-item',
 		'core/buttons',
 		'core/button',
 		'core/column',

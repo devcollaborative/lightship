@@ -1,21 +1,11 @@
 @use "../abstracts" as *;
 
 .wp-block-details {
-  padding: .5rem 1rem;
-  border: 1px solid #f3f3f3;
-  border-radius: 3px;
-  background-color: #f3f3f3;
-
   summary {
     font-weight: bold;
   }
 
   &[open] summary {
-    margin-bottom: .75rem;
     padding-bottom: .5rem;
-  }
-
-  :last-child  {
-    margin-bottom: .5rem;
   }
 }

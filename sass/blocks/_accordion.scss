@@ -1,0 +1,32 @@
+@use "../abstracts" as *;
+
+.wp-block-accordion {
+  .wp-block-accordion-heading {
+    font-family: $libre-franklin;
+    color: $black;
+    font-size: inherit !important;
+    font-weight: bold;
+  }
+
+  .wp-block-accordion-heading__toggle {
+    padding: .5rem 1rem !important;
+  }
+
+  .wp-block-accordion-item {
+    border: 1px solid #e1e1e1;
+    border-bottom: 0;
+
+    &:last-child {
+      border-bottom: 1px solid #e1e1e1;
+    }
+  }
+
+  .wp-block-accordion-panel {
+    padding: 1rem;
+    border-top: 1px solid #e1e1e1;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
