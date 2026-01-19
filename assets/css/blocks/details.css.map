@@ -1,0 +1,1 @@
+{"version":3,"sources":["blocks/details.scss"],"names":[],"mappings":"AAGE,0BACE,gBAAA,CAGF,gCACE,oBAAA","file":"details.css","sourcesContent":["@use \"../abstracts\" as *;\n\n.wp-block-details {\n  summary {\n    font-weight: bold;\n  }\n\n  &[open] summary {\n    padding-bottom: .5rem;\n  }\n}\n"]}

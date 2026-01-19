@@ -1,0 +1,1 @@
+{"version":3,"sources":["blocks/paragraph.scss"],"names":[],"mappings":"AAEA,iBACE,gBAAA,CACA,gBAAA,CACA,eAAA","file":"paragraph.css","sourcesContent":["@use \"../abstracts\" as *;\n\np.is-style-intro {\n  font-weight: bold;\n  font-size: 1.25em;\n  line-height: 1.2;\n}"]}

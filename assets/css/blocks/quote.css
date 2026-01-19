@@ -1,0 +1,2 @@
+.wp-block-quote{font-style:normal}.wp-block-quote cite{font-style:normal;font-size:.8rem;font-weight:bold;text-transform:uppercase;color:#093f4d}.wp-block-quote cite::before{content:"– "}.wp-block-quote p:last-child{margin-bottom:0}.wp-block-quote:not(.is-style-pullquote){border-left:4px solid #093f4d;padding-left:.8rem}.wp-block-quote.is-style-pullquote{padding:3rem;background-color:#f3f3f3;font-weight:bold;font-size:2em;line-height:1.2}
+/*# sourceMappingURL=quote.css.map */
