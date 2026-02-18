@@ -8,20 +8,21 @@
 	const disclosureMenu = document.querySelectorAll( '.disclosure-menu--horizontal .menu-item-has-children' );
 
   disclosureMenu.forEach( ( menuItem ) => {
-    menuItem.addEventListener('mouseover', () => {
-      toggleMenu(menuItem)
-    });
-
-    menuItem.addEventListener('mouseout', () => {
-      toggleMenu(menuItem)
-    });
-  });
-
-  function toggleMenu(menuItem) {
     const button = menuItem.querySelector( '.disclosure-element__button');
 
     if ( button ) {
-      button.click();
+      menuItem.addEventListener('mouseover', () => {
+        button.setAttribute('aria-expanded', 'true');
+      });
+
+      menuItem.addEventListener('mouseout', () => {
+        button.setAttribute('aria-expanded', 'false');
+      });
     }
-  }
+
+    // If there's no link, make the cursor a pointer.
+    if (menuItem.querySelector('span')) {
+      menuItem.querySelector('span').style.cursor = 'default';
+    }
+  });
 }() );
