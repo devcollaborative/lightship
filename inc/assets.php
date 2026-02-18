@@ -55,9 +55,9 @@ function lightship_enqueue_custom_block_styles() {
 		'details',
 		'group',
 		'media-text',
-		'pagination',
 		'paragraph',
-		'query-loop',
+		'query',
+		'query-pagination',
 		'quote',
 		'separator'
 	];
