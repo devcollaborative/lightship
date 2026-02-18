@@ -2,8 +2,8 @@
 // Font Stacks and Sizes
 // @font-face definitions should be defined in base/_fonts.scss
 // -----------------------------------------------------------------------------
-$libre-franklin: 'Libre Franklin', sans-serif;
-$lora: Lora, serif;
+$font-primary: var(--wp--preset--font-family--font-primary);
+$font-secondary: var(--wp--preset--font-family--font-secondary);
 
 $base-font-size: 20; // Pixel value only, no px unit
 $base-line-height: 1.5;

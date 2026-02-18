@@ -16,12 +16,6 @@ function lightship_assets() {
 	);
 
 	/**
-	 * Version string must be set to null to load multiple font families.
-	 * @see https://core.trac.wordpress.org/ticket/49742
-	 */
-	wp_enqueue_style( 'lightship/fonts','https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap', array(), null );
-
-	/**
 	 * Scripts
 	 */
 	wp_enqueue_script(
@@ -82,10 +76,11 @@ function lightship_enqueue_custom_block_styles() {
 add_action('init', 'lightship_enqueue_custom_block_styles');
 
 /**
- * Add Google Fonts preconnect tags. Remove as needed.
+ * Add extra tags to the head for performance and font loading.
  */
-function lightship_font_extras() {
-	echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
-	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+function lightship_extras() {
+	// Preload critical fonts -- ones used above the fold. This is the regular body font and bold heading font.
+	echo '<link rel="preload" href="' . get_template_directory_uri() . '/assets/fonts/libre-franklin-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+	echo '<link rel="preload" href="' . get_template_directory_uri() . '/assets/fonts/lora-v37-latin-600.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
 }
-add_action( 'wp_head', 'lightship_font_extras', 7 );
+add_action( 'wp_head', 'lightship_extras', 4 );

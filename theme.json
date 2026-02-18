@@ -29,7 +29,78 @@
       "customFontSize": false,
       "fontStyle": false,
       "fontWeight": false,
-      "fontFamilies": [],
+      "fontFamilies": [
+        {
+          "name": "Libre Franklin",
+          "slug": "font-primary",
+          "fontFamily": "\"Libre Franklin\", sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Libre Franklin",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/libre-franklin-v20-latin-regular.woff2"]
+            },
+            {
+              "fontFamily": "Libre Franklin",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/libre-franklin-v20-latin-italic.woff2"]
+            },
+            {
+              "fontFamily": "Libre Franklin",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/libre-franklin-v20-latin-700.woff2"]
+            },
+            {
+              "fontFamily": "Libre Franklin",
+              "fontWeight": "700",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/libre-franklin-v20-latin-700italic.woff2"]
+            }
+          ]
+        },
+        {
+          "name": "Lora",
+          "slug": "font-secondary",
+          "fontFamily": "\"Lora\", serif",
+          "fontFace": [
+            {
+              "fontFamily": "Lora",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/lora-v37-latin-regular.woff2"]
+            },
+            {
+              "fontFamily": "Lora",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/lora-v37-latin-italic.woff2"]
+            },
+            {
+              "fontFamily": "Lora",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/lora-v37-latin-600.woff2"]
+            },
+            {
+              "fontFamily": "Lora",
+              "fontWeight": "600",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/lora-v37-latin-600italic.woff2"]
+            }
+          ]
+        }
+      ],
       "defaultFontSizes": false
     },
     "spacing": {

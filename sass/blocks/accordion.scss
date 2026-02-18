@@ -2,7 +2,7 @@
 
 .wp-block-accordion {
   .wp-block-accordion-heading {
-    font-family: $libre-franklin;
+    font-family: var(--wp--preset--font-family--font-primary);
     color: $black;
     font-size: inherit !important;
     font-weight: bold;
