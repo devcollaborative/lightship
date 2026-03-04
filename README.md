@@ -6,6 +6,12 @@ It's still a work in progress, if you run into any issues or improvements please
 
 ## Changelog
 
+### 2.2.1
+
+Released: March 4, 2026
+
+**Full Changelog**: https://github.com/devcollaborative/lightship/compare/2.2.0...2.2.1
+
 ### 2.2.0
 
 Released: Nov 18, 2025
