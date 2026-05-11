@@ -108,6 +108,20 @@ Docs: https://timber.github.io/docs/
 
 ## Changelog
 
+### 2.3.0
+
+Released: May 11, 2026
+
+- Add more default styles
+- Enable Accordion block and add default styles for it
+- Load separate block styles
+- Use self-hosted Google fonts
+- Fix dropdown menu bug where menu stayed open when you clicked on another menu item
+- Remove sample Media & Text block styles (Overlay & Inset)
+- Change search to click to open
+
+**Full Changelog**: https://github.com/devcollaborative/lightship/compare/2.2.1...2.3.0
+
 ### 2.2.1
 
 Released: March 4, 2026
