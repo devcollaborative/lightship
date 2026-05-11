@@ -32,3 +32,6 @@ require get_template_directory() . '/inc/login-page.php';
 
 // Register & remove support for theme features.
 require get_template_directory() . '/inc/theme-setup.php';
+
+// Functions that customize admin menus or access by user role
+require get_template_directory(). '/inc/user-access.php';
