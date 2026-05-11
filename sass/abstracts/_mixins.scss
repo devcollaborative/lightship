@@ -108,7 +108,7 @@
   border-radius: 6px;
   border: solid 1px var(--border, currentColor);
   background-color: var(--background, $blue);
-  font-family: $lora;
+  font-family: var(--wp--preset--font-family--font-secondary);
   font-size: rem-calc(18);
   font-weight: bold;
   color: var(--foreground, $white);
